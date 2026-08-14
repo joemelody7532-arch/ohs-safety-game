@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>汽車維修廠 OHS 找危害</title>
+<style>
+  :root{
+    --navy:#0b3768;
+    --blue:#1479d1;
+    --green:#2c9a55;
+    --amber:#f2b705;
+    --red:#d9363e;
+    --ink:#1f2937;
+    --muted:#6b7280;
+    --panel:#ffffff;
+    --bg:#eef4f8;
+    --line:#d9e2ec;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:"Segoe UI","Noto Sans TC",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  body{overflow-x:hidden}
+  .app{min-height:100vh;display:flex;flex-direction:column}
+  header{
+    background:linear-gradient(110deg,#082f5b 0%,#0b3768 52%,#145c97 100%);
+    color:#fff;padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;
+    box-shadow:0 2px 12px rgba(0,0,0,.18);position:sticky;top:0;z-index:20
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-badge{width:42px;height:42px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;font-size:23px;font-weight:800}
+  .brand h1{font-size:20px;margin:0;line-height:1.15}
+  .brand small{display:block;font-size:12px;opacity:.85;margin-top:3px}
+  .stats{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:7px 10px;border-radius:999px;font-size:13px}
+  main{width:min(1400px,100%);margin:0 auto;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:16px;flex:1}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.08)}
+  .scene-card{overflow:hidden}
+  .scene-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}
+  .scene-head b{font-size:16px}
+  .scene-head span{color:var(--muted);font-size:13px}
+  .scene-wrap{position:relative;aspect-ratio:16/9;background:#dcebf7;overflow:hidden}
+  .scene{width:100%;height:100%;display:block}
+  .hotspot{position:absolute;border:0;background:transparent;cursor:pointer;padding:0;border-radius:14px}
+  .hotspot::after{content:"";position:absolute;inset:0;border:2px dashed transparent;border-radius:14px;transition:.16s ease}
+  .hotspot:hover::after,.hotspot:focus-visible::after{border-color:#ffd54f;background:rgba(255,213,79,.12)}
+  .hotspot.found::after{border-color:#39b86a;background:rgba(57,184,106,.18)}
+  .hotspot.found::before{content:"✓";position:absolute;right:-10px;top:-10px;width:28px;height:28px;border-radius:50%;background:#1f9d55;color:#fff;font-weight:800;display:grid;place-items:center;z-index:3;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+  .sidebar{display:flex;flex-direction:column;gap:16px}
+  .panel{padding:16px}
+  .panel h2{font-size:16px;margin:0 0 10px}
+  .progress{height:10px;background:#e6edf3;border-radius:999px;overflow:hidden}
+  .progress > div{height:100%;width:0;background:linear-gradient(90deg,#1f9d55,#59c97a);transition:.2s}
+  .controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  button.action{border:0;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer}
+  .primary{background:var(--navy);color:#fff}.secondary{background:#edf2f7;color:var(--navy)}
+  .hint{margin-top:10px;padding:10px;border-radius:10px;background:#fff7db;border:1px solid #f6d66a;font-size:13px;display:none}
+  .legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;color:#475569}
+  .legend div{display:flex;align-items:center;gap:7px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .list{display:flex;flex-direction:column;gap:8px;max-height:320px;overflow:auto}
+  .item{padding:10px;border:1px solid var(--line);border-radius:10px;background:#fafcff;font-size:13px}
+  .item strong{display:block;color:var(--navy);margin-bottom:3px}.item.done{border-color:#9bd8b0;background:#f0fbf4}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(18px);background:#111827;color:#fff;padding:12px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:.2s;z-index:50;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:min(92vw,720px);font-size:14px}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .modal{position:fixed;inset:0;background:rgba(15,23,42,.58);display:none;place-items:center;z-index:60;padding:20px}
+  .modal.show{display:grid}.modal-box{width:min(560px,100%);background:#fff;border-radius:18px;padding:24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+  .score-big{font-size:48px;font-weight:900;color:var(--navy);margin:8px 0}.small{font-size:12px;color:var(--muted)}
+  .footer-note{padding:8px 16px 16px;color:#64748b;font-size:12px}
+  @media (max-width:980px){main{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}}
+  @media (max-width:680px){header{align-items:flex-start;flex-direction:column}.stats{justify-content:flex-start}.sidebar{display:flex}.scene-wrap{aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="brand-badge">OHS</div><div><h1>汽車維修廠｜找出危害源</h1><small>Safety Spot-the-Hazard Game</small></div></div><div class="stats"><div class="chip">已找到 <b id="foundCount">0</b>/10</div><div class="chip">分數 <b id="score">0</b></div><div class="chip">時間 <b id="timer">03:00</b></div></div></header>
+<main>
+<section class="card scene-card">
+<div class="scene-head"><div><b>情境：汽車維修服務廠</b><br><span>請點擊畫面中你認為存在危害的地方</span></div><span>每題 +10 分｜誤點 -2 分｜提示 -3 分</span></div>
+<div class="scene-wrap" id="sceneWrap">
+<svg class="scene" viewBox="0 0 1600 900" role="img" aria-label="汽車維修廠危害辨識情境"><defs><linearGradient id="wall" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#edf4f8"/><stop offset="1" stop-color="#d7e5ef"/></linearGradient><linearGradient id="floor" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#bec9d1"/><stop offset="1" stop-color="#9aa7b1"/></linearGradient><linearGradient id="car" x1="0" x2="1"><stop offset="0" stop-color="#e8edf0"/><stop offset="1" stop-color="#b9c3c9"/></linearGradient></defs><rect width="1600" height="900" fill="url(#wall)"/><rect y="610" width="1600" height="290" fill="url(#floor)"/><rect x="0" y="560" width="1600" height="14" fill="#f0b429"/><rect x="60" y="120" width="1480" height="16" rx="8" fill="#4a5a67"/><text x="80" y="88" font-size="42" font-weight="800" fill="#0b3768">AUTO SERVICE • OHS TRAINING AREA</text><rect x="520" y="250" width="22" height="430" fill="#315b86"/><rect x="1040" y="250" width="22" height="430" fill="#315b86"/><rect x="490" y="570" width="110" height="28" rx="6" fill="#315b86"/><rect x="980" y="570" width="110" height="28" rx="6" fill="#315b86"/><g transform="translate(610 350)"><path d="M0 120 Q55 35 180 25 L390 30 Q460 48 510 115 L520 170 L0 170Z" fill="url(#car)" stroke="#53616c" stroke-width="7"/><rect x="135" y="54" width="120" height="65" rx="16" fill="#7cc5e8"/><rect x="265" y="52" width="120" height="67" rx="16" fill="#7cc5e8"/><circle cx="110" cy="170" r="54" fill="#242b30"/><circle cx="110" cy="170" r="27" fill="#b8c1c7"/><circle cx="420" cy="170" r="54" fill="#242b30"/><circle cx="420" cy="170" r="27" fill="#b8c1c7"/></g><g transform="translate(790 560)"><circle cx="0" cy="0" r="22" fill="#f2c39b"/><rect x="-18" y="20" width="36" height="65" rx="14" fill="#2f6ea3"/><line x1="-8" y1="84" x2="-26" y2="140" stroke="#22313b" stroke-width="10"/><line x1="8" y1="84" x2="28" y2="140" stroke="#22313b" stroke-width="10"/></g><path d="M1110 700 C1180 655 1300 672 1340 730 C1295 785 1168 795 1085 752Z" fill="#4065a7" opacity=".75"/><rect x="1278" y="616" width="58" height="76" rx="6" fill="#9da6aa" transform="rotate(18 1307 654)"/><text x="1270" y="655" font-size="22" font-weight="700" fill="#222">OIL</text><g transform="translate(145 215) rotate(-7)"><line x1="0" y1="0" x2="0" y2="410" stroke="#7c8790" stroke-width="16"/><line x1="110" y1="0" x2="110" y2="410" stroke="#7c8790" stroke-width="16"/><g stroke="#7c8790" stroke-width="11"><line x1="0" y1="55" x2="110" y2="55"/><line x1="0" y1="115" x2="110" y2="115"/><line x1="0" y1="175" x2="110" y2="175"/><line x1="0" y1="235" x2="110" y2="235"/><line x1="0" y1="295" x2="110" y2="295"/><line x1="0" y1="355" x2="110" y2="355"/></g></g><g transform="translate(205 175)"><circle cx="0" cy="0" r="20" fill="#f2c39b"/><rect x="-16" y="18" width="32" height="58" rx="10" fill="#e06138"/><line x1="-6" y1="74" x2="-18" y2="124" stroke="#2d3748" stroke-width="9"/><line x1="6" y1="74" x2="20" y2="124" stroke="#2d3748" stroke-width="9"/></g><g transform="translate(1250 180)"><rect x="0" y="0" width="160" height="190" rx="8" fill="#6c7a86"/><rect x="20" y="24" width="120" height="140" rx="5" fill="#e5eaee"/><path d="M75 42 L50 100 H78 L62 145 L112 83 H85 L105 42Z" fill="#f2b705"/><line x1="160" y1="20" x2="222" y2="-12" stroke="#5d6973" stroke-width="12"/><line x1="160" y1="170" x2="224" y2="204" stroke="#5d6973" stroke-width="12"/></g><g transform="translate(365 665)"><rect x="0" y="0" width="70" height="110" rx="12" fill="#e2d46d"/><rect x="18" y="-20" width="34" height="26" rx="4" fill="#444"/><polygon points="35,28 55,62 15,62" fill="#f7fafc" stroke="#222" stroke-width="3"/><text x="24" y="57" font-size="22" font-weight="900" fill="#d9363e">!</text></g><g transform="translate(80 690)"><rect x="0" y="30" width="175" height="85" rx="10" fill="#f4b400"/><rect x="35" y="-35" width="70" height="72" rx="8" fill="#394b59"/><circle cx="40" cy="120" r="30" fill="#2d3439"/><circle cx="145" cy="120" r="30" fill="#2d3439"/><line x1="175" y1="20" x2="175" y2="145" stroke="#3a444b" stroke-width="12"/><line x1="175" y1="128" x2="285" y2="128" stroke="#3a444b" stroke-width="10"/></g><g transform="translate(305 715)"><circle cx="0" cy="0" r="18" fill="#f2c39b"/><rect x="-14" y="18" width="28" height="54" rx="10" fill="#405b6b"/><line x1="-5" y1="70" x2="-12" y2="110" stroke="#2d3748" stroke-width="8"/><line x1="5" y1="70" x2="14" y2="110" stroke="#2d3748" stroke-width="8"/></g><g transform="translate(1120 480)"><circle cx="0" cy="0" r="20" fill="#f2c39b"/><rect x="-18" y="20" width="36" height="65" rx="12" fill="#274c77"/><circle cx="72" cy="62" r="20" fill="#5d6871"/><g stroke="#f5a623" stroke-width="5"><line x1="88" y1="60" x2="150" y2="38"/><line x1="88" y1="64" x2="160" y2="76"/><line x1="88" y1="67" x2="145" y2="112"/><line x1="85" y1="54" x2="137" y2="20"/></g></g><g transform="translate(1455 470)"><rect x="0" y="0" width="40" height="105" rx="16" fill="#d9363e"/><rect x="12" y="-20" width="16" height="30" fill="#333"/><path d="M12 -10 Q35 -35 45 -5" fill="none" stroke="#333" stroke-width="7"/><rect x="-30" y="80" width="95" height="95" fill="#8a6548"/></g><path d="M520 750 C590 715 650 800 720 765 C790 730 860 820 930 770" fill="none" stroke="#263238" stroke-width="15" stroke-linecap="round"/><g transform="translate(520 660)"><circle cx="0" cy="0" r="22" fill="#f2c39b"/><rect x="-18" y="20" width="36" height="70" rx="12" fill="#5c6f7d"/><line x1="-8" y1="86" x2="-25" y2="140" stroke="#2d3748" stroke-width="10"/><line x1="8" y1="86" x2="26" y2="140" stroke="#2d3748" stroke-width="10"/></g></svg>
+<button class="hotspot" data-id="ladder" style="left:7%;top:16%;width:14%;height:48%"></button><button class="hotspot" data-id="lift" style="left:44%;top:48%;width:18%;height:28%"></button><button class="hotspot" data-id="spill" style="left:68%;top:71%;width:18%;height:18%"></button><button class="hotspot" data-id="electric" style="left:77%;top:15%;width:15%;height:28%"></button><button class="hotspot" data-id="chemical" style="left:20%;top:71%;width:10%;height:17%"></button><button class="hotspot" data-id="forklift" style="left:3%;top:72%;width:20%;height:20%"></button><button class="hotspot" data-id="grinding" style="left:67%;top:50%;width:15%;height:22%"></button><button class="hotspot" data-id="extinguisher" style="left:87%;top:49%;width:10%;height:21%"></button><button class="hotspot" data-id="hose" style="left:30%;top:80%;width:29%;height:12%"></button><button class="hotspot" data-id="ppe" style="left:28%;top:69%;width:12%;height:23%"></button>
+</div><div class="footer-note">提示：本遊戲為教育訓練用途，實際危害判定仍應依現場風險評估、作業程序與公司規範執行。</div></section>
+<aside class="sidebar"><section class="card panel"><h2>遊戲進度</h2><div class="progress"><div id="progressBar"></div></div><div class="controls"><button class="action primary" id="hintBtn">給我提示</button><button class="action secondary" id="resetBtn">重新開始</button></div><div class="hint" id="hintBox"></div></section><section class="card panel"><h2>危害分類</h2><div class="legend"><div><span class="dot" style="background:#d9363e"></span>立即性危害</div><div><span class="dot" style="background:#f2b705"></span>設備／環境</div><div><span class="dot" style="background:#1479d1"></span>作業管理</div><div><span class="dot" style="background:#2c9a55"></span>改善完成</div></div></section><section class="card panel"><h2>已發現項目</h2><div class="list" id="resultList"></div></section></aside>
+</main></div><div class="toast" id="toast"></div><div class="modal" id="modal"><div class="modal-box"><div style="font-size:36px">🎉</div><h2>挑戰完成！</h2><div class="score-big" id="finalScore">100</div><p id="finalText">你成功找出所有危害。</p><button class="action primary" id="playAgain">再玩一次</button><p class="small">建議將找出的危害轉化為巡檢、JSA、教育訓練或 CAPA 改善事項。</p></div></div>
+<script>
+const hazards={ladder:{title:"高處作業／梯具使用不當",detail:"梯具角度、固定與人員站位不安全，可能造成墜落。",hint:"看看左上方有人正在使用梯子。"},lift:{title:"車輛頂升下方有人",detail:"車輛架高時，人員進入下方前應確認頂升設備、支撐與防墜措施。",hint:"看看車輛舉升區的下方。"},spill:{title:"地面油污未立即處理",detail:"油污可能造成滑倒，也可能增加火災與環境污染風險。",hint:"注意右下方地面是否有液體。"},electric:{title:"配電箱開啟／帶電部位暴露",detail:"應防止人員誤觸並依電氣安全程序管理。",hint:"看看右上方牆面的電氣設備。"},chemical:{title:"化學品標示與存放不當",detail:"化學品應有標示、SDS、適當容器與指定存放區。",hint:"注意左下方是否有單獨放置的容器。"},forklift:{title:"堆高機與行人混行",detail:"人車動線未有效分流，可能發生碰撞或夾壓。",hint:"看看左下角的車輛與行人距離。"},grinding:{title:"研磨火花與防護不足",detail:"研磨作業應使用適當眼面防護並管制火花飛散方向。",hint:"找找看哪裡有火花。"},extinguisher:{title:"消防器材遭遮擋",detail:"滅火器前方應保持淨空，確保緊急時可立即取用。",hint:"看看最右側的紅色消防器材。"},hose:{title:"管線／軟管拖地",detail:"通道上的軟管容易造成絆倒，應固定或改走非通行區域。",hint:"看看地板中間是否有長條物。"},ppe:{title:"未配戴必要 PPE",detail:"依作業危害選用安全帽、護目鏡、手套、防護鞋等個人防護具。",hint:"注意左下偏中的維修人員。"}};
+let found=new Set(),score=0,seconds=180,timerId=null,hintIndex=0;const foundCount=document.getElementById('foundCount'),scoreEl=document.getElementById('score'),timerEl=document.getElementById('timer'),progressBar=document.getElementById('progressBar'),resultList=document.getElementById('resultList'),hintBox=document.getElementById('hintBox'),toast=document.getElementById('toast'),modal=document.getElementById('modal'),finalScore=document.getElementById('finalScore'),finalText=document.getElementById('finalText');
+function fmtTime(s){const m=Math.floor(s/60).toString().padStart(2,'0'),sec=(s%60).toString().padStart(2,'0');return `${m}:${sec}`}
+function update(){foundCount.textContent=found.size;scoreEl.textContent=score;timerEl.textContent=fmtTime(seconds);progressBar.style.width=`${found.size/10*100}%`}
+function showToast(msg){toast.textContent=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)}
+function addResult(id){const h=hazards[id],div=document.createElement('div');div.className='item done';div.innerHTML=`<strong>✓ ${h.title}</strong>${h.detail}`;resultList.prepend(div)}
+function complete(){clearInterval(timerId);finalScore.textContent=score;finalText.textContent=`你找出了 ${found.size}/10 項危害。剩餘時間 ${fmtTime(seconds)}。`;modal.classList.add('show')}
+function startTimer(){clearInterval(timerId);timerId=setInterval(()=>{if(seconds>0){seconds--;update();if(seconds===0)complete()}},1000)}
+document.querySelectorAll('.hotspot').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.id;if(found.has(id))return;found.add(id);score+=10;btn.classList.add('found');addResult(id);showToast(`找到危害：${hazards[id].title}  +10`);update();if(found.size===10){score+=Math.max(0,Math.floor(seconds/10));update();setTimeout(complete,400)}}));
+document.getElementById('sceneWrap').addEventListener('click',e=>{if(e.target.closest('.hotspot'))return;score=Math.max(0,score-2);update();showToast('這裡不是本關設定的危害點  -2')});
+document.getElementById('hintBtn').addEventListener('click',()=>{const remaining=Object.keys(hazards).filter(k=>!found.has(k));if(!remaining.length)return;const id=remaining[hintIndex%remaining.length];hintIndex++;score=Math.max(0,score-3);hintBox.style.display='block';hintBox.textContent='提示：'+hazards[id].hint;update()});
+function reset(){found.clear();score=0;seconds=180;hintIndex=0;document.querySelectorAll('.hotspot').forEach(b=>b.classList.remove('found'));resultList.innerHTML='';hintBox.style.display='none';modal.classList.remove('show');update();startTimer()}
+document.getElementById('resetBtn').addEventListener('click',reset);document.getElementById('playAgain').addEventListener('click',reset);update();startTimer();
+</script></body></html>
