@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#eaf8ed">
-<title>走路不滑手機｜廠區手機使用適宜性三圈風險檢核</title>
+<title>走路不滑手機｜三圈風險個人化圖文檢核</title>
 <style>
 :root{--ink:#0f2543;--muted:#677991;--line:#e1e9f2;--bg:#f3f7fc;--blue:#1769cf;--green:#138a63;--orange:#ef8c21;--red:#e24846;--shadow:0 10px 36px rgba(26,56,95,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8bbfff;outline-offset:2px}a{color:inherit;text-decoration:none}.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
@@ -71,6 +71,23 @@ body{background:linear-gradient(180deg,#f0fbf5,#eef9f6 62%,#f9fdfa);color:var(--
 @media(max-width:900px){.hero{padding:40px 0 73px}.hero-art{min-width:240px;width:34%}.hero h1{font-size:42px}.rule-item{padding:12px;gap:9px}.rule-icon{width:39px;height:39px;font-size:21px}.rule-item strong{font-size:13px}.main{grid-template-columns:1fr}.aside{position:static}}
 @media(max-width:620px){.top-inner{height:63px}.brandmark{height:36px;width:36px}.brandtext{font-size:14px}.brandtext small{font-size:8px}.top-meta{font-size:10px;padding:7px 9px}.hero{padding:28px 0 62px}.hero-inner{display:block;position:relative}.hero-copy{position:relative;z-index:2}.eyebrow{font-size:10px;letter-spacing:.7px}.hero-mantra{font-size:12px;margin-top:14px}.hero h1{font-size:clamp(34px,8.8vw,44px);line-height:1.19;letter-spacing:0;margin:12px 0 15px;max-width:95%}.underline-swipe{height:8px;margin-left:40%;width:55%}.hero p{font-size:12px;line-height:1.7;max-width:90%}.hero-art{position:relative;min-width:0;width:min(270px,85%);height:215px;right:auto;top:auto;opacity:1;transform:none;margin:2px auto -45px}.mascot{width:100%}.hero-highlight{font-size:11px;line-height:1.5;padding:9px 11px;max-width:100%;margin-top:12px}.steps{gap:5px;margin-top:16px}.step{font-size:10px;gap:5px}.step b{width:21px;height:21px}.step-line{width:9px}.rulebar{grid-template-columns:1fr;gap:8px;margin-top:-18px;margin-bottom:15px}.rule-item{padding:9px 12px;border-radius:14px}.rule-icon{width:36px;height:36px;font-size:21px}.rule-item strong{font-size:13px}.rule-item small{font-size:10px;margin-top:0}.main{margin-top:0;gap:13px}.panel{border-radius:16px}.panel-pad{padding:16px}.stage{grid-template-columns:1fr}.gridmeta{grid-template-columns:1fr}.section-head{padding:12px 14px}.section-head strong{font-size:15px}.section-body{padding:12px}.choice{padding:11px 9px}.choice .primary{font-size:12px}.rule-list .legend{font-size:11px}.mailbox{padding:13px}.foot{padding:18px 14px 27px}}
 @media print{.hero,.rulebar,.top{display:none!important}.main{margin:0!important}.result-panel{box-shadow:none!important;border:none!important}}
+
+/* V6 — personalised Venn report image and Outlook picture sending */
+.risk-mail-graphic{margin:17px 0 4px;padding:14px;background:linear-gradient(150deg,#f5fff9,#f0faf9);border:1px solid #b7e4d0;border-radius:18px}
+.risk-mail-graphic h4{margin:0 0 5px;color:#09645d;font-size:16px;display:flex;align-items:center;gap:8px}
+.risk-mail-graphic p{font-size:12px;line-height:1.6;color:#5e8379;margin:0 0 13px}
+.risk-mail-graphic .image-shell{max-width:430px;margin:0 auto;background:white;overflow:hidden;border-radius:17px;box-shadow:0 10px 20px #104e3c17;border:1px solid #d6ede2}
+.risk-mail-graphic img{width:100%;height:auto;display:block}.risk-mail-graphic img[hidden]{display:none!important}
+.risk-mail-graphic .image-empty{display:flex;justify-content:center;align-items:center;min-height:220px;padding:24px;text-align:center;color:#658c80;font-weight:800;font-size:14px}
+.risk-mail-graphic .mailpic-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.risk-mail-graphic .mailpic-actions .btn{flex:1 1 170px;font-size:12px;padding:10px}
+.risk-mail-graphic .mailpic-actions .mail-eml{background:linear-gradient(110deg,#0b8669,#006c79);color:white}
+.risk-mail-graphic .mailpic-note{background:#fffdf4;border:1px solid #f2e6bf;border-radius:11px;color:#84672d;padding:10px 12px;font-size:12px;line-height:1.6;margin-top:11px}
+.risk-mail-graphic .mailpic-note strong{color:#86621c}
+.risk-mail-graphic .mailpic-note .hint-line{display:block;margin-top:6px}
+@media(max-width:620px){.risk-mail-graphic{padding:12px}.risk-mail-graphic .mailpic-actions .btn{flex:1 1 100%}}
+@media print{.risk-mail-graphic{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -150,14 +167,31 @@ body{background:linear-gradient(180deg,#f0fbf5,#eef9f6 62%,#f9fdfa);color:var(--
 <section class="panel result-panel" id="result-panel"><h2>📋 整體判定與改善建議</h2><div class="print-only"><h1>廠區手機使用適宜性｜評估結果</h1><p id="printMeta"></p></div><span class="result-badge" id="resultBadge" style="background:#e9f2fd;color:#34608b">尚未完成評估</span><div class="result-box"><strong id="recommendTitle">請先完成 3 類風險檢核</strong><p id="recommendText">請選擇勤務、確認手機使用時機，並完成環境／勤務／被撞風險檢查。</p><div class="report-detail" id="reportDetails"></div></div><div class="actionrow"><button class="btn" id="showResult" disabled>🏁 完成檢核並取得結果</button><button class="btn light" id="exportCsv" disabled>⬇ 匯出 CSV</button><button class="btn light" id="printBtn" disabled>🖨 列印／PDF</button><button class="btn warn" id="resetBtn">↻ 清除重填</button></div>
 <div class="mailbox" id="mailbox">
 <h3>📧 送出檢核結果｜開啟 Outlook</h3>
-<p>填寫完成後，一鍵開啟本機預設郵件程式的新郵件草稿，自動帶入<strong>風險分數、判定、勤務、風險摘要及改善建議</strong>。</p>
+<p>填寫完成後，一鍵開啟本機預設郵件程式的新郵件草稿，自動帶入<strong>風險分數、判定、勤務、風險摘要及改善建議</strong>。要在郵件中包含圖像，請使用下方「圖文郵件」或「複製圖片」功能。</p>
 <div class="mail-grid"><div><label class="field-label" for="mailTo">收件人電子郵件（選填）</label><input id="mailTo" type="email" class="text-field" inputmode="email" autocomplete="email" maxlength="130" placeholder="例：safety@company.com"></div><div><label class="field-label" for="mailCc">副本 CC（選填）</label><input id="mailCc" type="email" class="text-field" inputmode="email" maxlength="130" placeholder="例：supervisor@company.com"></div></div>
-<div class="mail-actions"><button class="btn mail-send" id="sendOutlook" type="button" disabled>✉️ 送出｜開啟 Outlook 草稿</button><button class="btn light" id="copyReport" type="button" disabled>📋 複製完整報告</button></div>
-<div class="mail-status" id="mailStatus" role="status" aria-live="polite">完成三圈評估後，即可使用 Outlook 寄送。</div>
+
+<div class="risk-mail-graphic" id="riskGraphicPanel">
+  <h4>🖼️ 每位填寫者專屬的風險結果圖</h4>
+  <p>依照本次填寫的勤務、環境、被撞危害、姓名與分數即時生成圖片。下方是「會放入郵件」的圖像預覽；填答未完成前不會產生正式圖檔。</p>
+  <div class="image-shell"><div class="image-empty" id="riskImageEmpty">✅ 完成三圈確認後，這裡會出現您的專屬三圈風險圖</div><img id="riskImage" alt="本次填答之專屬風險交集、分數及手機使用判定圖片" hidden></div>
+  <div class="mailpic-actions">
+    <button class="btn mail-eml" type="button" id="emlRiskImage" disabled>✉️ 產生含圖片 Outlook 郵件 (.eml)</button>
+    <button class="btn light" type="button" id="copyRiskImage" disabled>📋 複製圖片到郵件</button>
+    <button class="btn light" type="button" id="downloadRiskImage" disabled>⬇ 下載本次 PNG 圖片</button>
+  </div>
+  <div class="mailpic-note"><strong>📌 Outlook 寄送須知</strong>
+    <span class="hint-line">方法 A：下載 .eml 圖文郵件，開啟後核對收件人、圖片並按「傳送」。部分新版 Outlook 不支援 .eml 內嵌圖正常編輯，請改用方法 B。</span>
+    <span class="hint-line">方法 B：先按「複製圖片」，再按下方「開啟 Outlook 草稿」，於郵件內文貼上（Ctrl+V），最後按「傳送」。如果無法複製，請下載 PNG 後手動插入或附加。</span>
+    <span class="hint-line">不會在背景自動寄信；若需要提交即全自動發信並內嵌圖片，需公司授權的 Microsoft 365／Power Automate 或 Graph 服務。</span>
+  </div>
+</div>
+
+<div class="mail-actions"><button class="btn mail-send" id="sendOutlook" type="button" disabled>📝 開啟 Outlook 文字草稿（貼上圖片）</button><button class="btn light" id="copyReport" type="button" disabled>📋 複製完整報告</button></div>
+<div class="mail-status" id="mailStatus" role="status" aria-live="polite">完成檢核後，可產生本次圖片與圖文郵件。</div>
 
 <details><summary>👁️ 預覽即將帶入郵件的內容</summary><pre id="mailPreview">完成評估後顯示郵件內容。</pre></details>
 </div><div class="notice" id="completionNotice">尚需完成：選擇勤務，以及三類風險確認。</div></section></aside>
-</main><footer class="foot">本工具為內部風險溝通與示範性評分模型，非政府核定標準；「可使用」僅代表本次條件下相對適宜，仍須符合廠區管理規範、管制分區與現場主管指示。｜V5 · 職安宣導風格 · 2026</footer>
+</main><footer class="foot">本工具為內部風險溝通與示範性評分模型，非政府核定標準；「可使用」僅代表本次條件下相對適宜，仍須符合廠區管理規範、管制分區與現場主管指示。｜V6 · 每人專屬圖文結果 · 2026</footer>
 <script>
 'use strict';
 const tasks=[
@@ -232,7 +266,7 @@ function update(){const a=assess();const {score,level,selected,task,locked,reaso
 $('level').textContent=level==='red'?'禁止使用':level==='amber'?'限制使用':complete()?'可使用':'待完成評估';$('level').style.color=complete()?color:'#6f829a';$('levelDesc').textContent=locked?'觸發重大風險條件：即使分數未達門檻也禁止使用。':level==='red'?'風險分數偏高，應停止手機使用。':level==='amber'?'先暫停作業並移至指定安全區。':complete()?'本次條件下相對低風險，仍須遵守現場規範。':'目前僅供即時預覽，完成確認後才正式判定。';
 for(const g of ['env','duty','hit']){$('circle-'+g).classList.toggle('activated',g==='duty'&&task!==null||selected.some(x=>x.group===g));}const active=['環境','勤務','被撞'].filter((_,i)=>[a.groupSum.env>0,!!task,a.groupSum.hit>0][i]);$('ringsStatus').textContent=active.length===3?'⚠️ 三圈風險交集：請優先排除危害':active.length===2?'⚠️ 兩類風險同時存在：提高警覺':active.length===1?'已辨識 '+active[0]+' 風險':'勾選風險即可觀察風險交集';
 const missing=[];if(!task)missing.push('選擇勤務');for(const [id,title] of [['env','環境'],['duty','勤務'],['hit','被撞']]){if(!document.querySelector(`.confirmed[data-group="${id}"]`).checked)missing.push(title+'確認');}const ready=complete();$('showResult').disabled=!ready;$('exportCsv').disabled=!ready;$('printBtn').disabled=!ready;$('completionNotice').textContent=ready?'✅ 三圈評估已完成，可取得正式判定、列印或匯出。':'尚需完成：'+missing.join('、')+'。';$('completionNotice').classList.toggle('good',ready);updateMailPanel();if(ready){renderResult(a);}else{approved=false;$('resultBadge').textContent='尚未完成評估';$('resultBadge').style.cssText='background:#e9f2fd;color:#34608b';$('recommendTitle').textContent='請先完成 3 類風險檢核';$('recommendText').textContent='請選擇勤務、確認手機使用時機，並完成環境／勤務／被撞風險檢查。';$('reportDetails').innerHTML='';}
-updateTaskMeta();}
+updateTaskMeta();requestRiskImageUpdate();}
 function labelsFor(a){return a.selected.map(x=>x.text);}
 function renderResult(a){const color=a.level==='red'?'#c12f31':a.level==='amber'?'#9d640a':'#087856';const bg=a.level==='red'?'#ffe8e7':a.level==='amber'?'#fff1d6':'#dff6ea';const levelLabel=a.level==='red'?'⛔ 禁止使用手機':a.level==='amber'?'⚠️ 限制使用手機':'✅ 可於安全區使用手機';$('resultBadge').textContent=`${levelLabel}｜${a.score} / 100 分`;$('resultBadge').style.background=bg;$('resultBadge').style.color=color;const advice=a.level==='red'?'先停止手機操作，確認車輛／設備安全，離開碼頭與車輛動線，移至指定安全區後重新評估。':a.level==='amber'?'先停止手上工作，移往實體隔離的安全地點；排除車輛、通道與操作風險後，再重新評估。':'評估顯示相對低風險，仍應停留在核准的安全位置，不邊走邊看手機，並服從現場管制要求。';$('recommendTitle').textContent=a.level==='red'?'高風險警示｜立即排除條件':a.level==='amber'?'先停下來｜降低風險後再使用':'可使用不等於隨時可用';$('recommendText').textContent=advice;let html=`<div>勤務：<strong>${esc(a.task.zh)}</strong> <span class="en">(${esc(a.task.en)})</span></div><div>手機使用時機：${esc(stageName(a.stage))}</div><div>風險組成：勤務基礎 ${a.base} 分 · 環境 ${a.groupSum.env} 分 · 勤務附加 ${a.groupSum.duty} 分 · 被撞 ${a.groupSum.hit} 分${a.stage==='safe'?' · 隔離安全區調整 -12 分':''}</div>`;if(a.reasons.length)html+=`<p style="color:#b23435;font-weight:900">⚠️ 重大風險／需確認：</p><ul>${a.reasons.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;html+=`<p><strong>已辨識危害（${a.selected.length} 項）</strong></p>`+(a.selected.length?`<ul>${labelsFor(a).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<div>無勾選額外危害。</div>');$('reportDetails').innerHTML=html;$('printMeta').textContent=`評估日期：${new Date().toLocaleString('zh-TW')} ｜ 區域：${$('site').value||'未填'} ｜ 評估人：${$('person').value||'未填'}`;}
 function stageName(stage){return stage==='active'?'作業進行中':stage==='paused'?'工作已暫停，仍在作業場域':'已離開現場，位於實體隔離安全區';}
@@ -316,7 +350,7 @@ function updateMailPanel(){
  $('sendOutlook').disabled=!ready;
  $('copyReport').disabled=!ready;
  $('mailPreview').textContent=ready?getEmailBody(assess()):'完成評估後顯示郵件內容。';
- if(!ready)$('mailStatus').textContent='完成三圈評估後，即可使用 Outlook 寄送。';
+ if(!ready)$('mailStatus').textContent='完成檢核後，可產生本次圖片與圖文郵件。';
 }
 function openOutlook(){
  if(!complete()){ $('mailStatus').textContent='請先完成三圈風險評估。';return; }
@@ -341,7 +375,129 @@ async function copyFullReport(){
  $('mailStatus').textContent=copied?'已複製完整評估報告，可貼到 Outlook 郵件內。':'瀏覽器禁止存取剪貼簿，請展開郵件預覽，或使用 CSV 匯出功能。';
 }
 
-initChecks();fillTasks();update();document.querySelectorAll('input').forEach(x=>{if(x.id==='taskSearch')return;x.addEventListener('input',update);x.addEventListener('change',update);});$('task').addEventListener('change',update);$('taskSearch').addEventListener('input',e=>{fillTasks(e.target.value);update();});$('demoDock').addEventListener('click',()=>putDemo('dock'));$('demoOffice').addEventListener('click',()=>putDemo('office'));$('showResult').addEventListener('click',()=>{if(!complete())return;approved=true;renderResult(assess());$('result-panel').scrollIntoView({behavior:'smooth',block:'center'});});$('exportCsv').addEventListener('click',saveCsv);$('printBtn').addEventListener('click',()=>{if(complete())window.print()});$('resetBtn').addEventListener('click',()=>reset());$('sendOutlook').addEventListener('click',openOutlook);$('copyReport').addEventListener('click',copyFullReport);$('mailTo').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('mailCc').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});
+
+// -------- V6: Personalized result graphic, fully local, no external image service --------
+const SNAP_W=1000, SNAP_H=1310;
+let riskImageData='';
+let imageSignature='';
+let snapDelay=null;
+function getSnapSignature(a){return JSON.stringify([a.task?.zh,a.stage,a.score,a.groupSum,a.selected.map(x=>x.id),a.level,a.locked,$('site').value,$('person').value]);}
+function cardRounded(ctx,x,y,w,h,r,color,stroke=null){
+ ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+ ctx.fillStyle=color;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.stroke();}
+}
+function textAt(ctx,s,x,y,size=30,color='#0a5c57',weight=700,align='left'){
+ ctx.save();ctx.font=weight+' '+size+'px "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", sans-serif';ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='middle';ctx.fillText(String(s),x,y);ctx.restore();
+}
+function trunc(ctx,s,maxWidth){s=String(s);if(ctx.measureText(s).width<=maxWidth)return s;while(s.length>1 && ctx.measureText(s+'…').width>maxWidth)s=s.slice(0,-1);return s+'…';}
+function drawRiskGraphic(a){
+ const canvas=document.createElement('canvas');canvas.width=SNAP_W;canvas.height=SNAP_H;
+ const c=canvas.getContext('2d');
+ const grad=c.createLinearGradient(0,0,SNAP_W,SNAP_H);grad.addColorStop(0,'#eaf9f4');grad.addColorStop(.65,'#f9fffb');grad.addColorStop(1,'#e3f6ee');c.fillStyle=grad;c.fillRect(0,0,SNAP_W,SNAP_H);
+ cardRounded(c,36,34,928,1242,36,'#ffffff','#dbede5');
+ c.fillStyle='#16b57a';c.beginPath();c.arc(112,126,31,0,Math.PI*2);c.fill();
+ textAt(c,'三圈風險評估結果',164,123,47,'#075d59',900);
+ textAt(c,'PERSONAL RISK ASSESSMENT',165,173,18,'#6a9488',650);
+ cardRounded(c,732,97,172,49,25,'#e5f8ed');textAt(c,'已完成評估',818,121,23,'#087961',800,'center');
+ const pts={env:[372,365],duty:[630,365],hit:[500,558]};const rad=196;
+ for(const [key,fill,stroke] of [['env','rgba(77,191,115,.27)','#43a66e'],['duty','rgba(69,183,172,.24)','#209d9c'],['hit','rgba(250,178,83,.26)','#eba94e']]){
+  const [x,y]=pts[key];c.beginPath();c.arc(x,y,rad,0,Math.PI*2);c.fillStyle=fill;c.fill();c.lineWidth=a.groupSum[key]>0?9:5;c.strokeStyle=stroke;c.stroke();
+ }
+ textAt(c,'環境',300,317,34,'#0b7560',900,'center');
+ textAt(c,a.groupSum.env+' 分',300,362,24,'#31866a',650,'center');
+ textAt(c,'勤務',706,317,34,'#057879',900,'center');
+ textAt(c,(a.base+a.groupSum.duty)+' 分',706,362,24,'#198e8d',650,'center');
+ textAt(c,'被撞',500,648,37,'#aa6127',900,'center');
+ textAt(c,a.groupSum.hit+' 分',500,697,24,'#ae753c',650,'center');
+ c.fillStyle='#ffffff';c.strokeStyle='#b1dacb';c.lineWidth=7;c.beginPath();c.arc(500,443,78,0,Math.PI*2);c.fill();c.stroke();
+ c.strokeStyle=a.level==='red'?'#de483e':a.level==='amber'?'#ef9a32':'#21a777';c.lineWidth=8;c.beginPath();c.arc(500,423,22,0,Math.PI*2);c.stroke();
+ c.beginPath();c.moveTo(483,407);c.lineTo(517,441);c.stroke();
+ textAt(c,'風險交集',500,491,23,'#0b6359',800,'center');
+ // Score and classification
+ c.strokeStyle='#e8eff1';c.lineWidth=29;c.beginPath();c.arc(255,882,122,0,Math.PI*2);c.stroke();
+ const col=a.level==='red'?'#dc473f':a.level==='amber'?'#e5a027':'#15a679';
+ c.strokeStyle=col;c.lineCap='round';c.beginPath();c.arc(255,882,122,-Math.PI/2,-Math.PI/2+2*Math.PI*a.score/100);c.stroke();
+ textAt(c,String(a.score),255,871,90,col,900,'center');textAt(c,'風險分數 / 100',255,938,25,'#698f81',650,'center');
+ textAt(c,'LIVE RISK LEVEL',454,838,28,'#788e9b',650);
+ textAt(c,emailDecision(a),454,904,42,col,900);
+ textAt(c,a.locked?'已觸發重大危害排除條件':'依本次檢核條件產生評估建議',454,966,23,'#627e74',650);
+ cardRounded(c,90,1030,820,154,21,'#eef8f2');
+ c.font='700 24px "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", sans-serif';
+ const who='填寫人：'+($('person').value.trim()||'未填')+'　｜　區域：'+($('site').value.trim()||'未填');
+ textAt(c,trunc(c,who,758),124,1063,24,'#236d5c',700);
+ c.font='700 24px "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", sans-serif';
+ textAt(c,trunc(c,'作業：'+a.task.zh+'　｜　'+stageName(a.stage),758),124,1109,24,'#236d5c',700);
+ textAt(c,'環境 '+a.groupSum.env+'　｜　勤務 '+(a.base+a.groupSum.duty)+'　｜　被撞 '+a.groupSum.hit,124,1154,24,'#26776b',800);
+ textAt(c,'評估日期：'+new Date().toLocaleString('zh-TW',{hour12:false}),105,1223,22,'#799389',500);
+ textAt(c,'內部風險溝通工具；正式判定依公司制度及現場規範。',895,1223,16,'#80988e',500,'right');
+ return canvas;
+}
+function getCurrentRiskCanvas(){if(!complete())throw new Error('檢核尚未完成');return drawRiskGraphic(assess());}
+function updateRiskImage(force=false){
+ const ready=complete();for(const id of ['downloadRiskImage','copyRiskImage','emlRiskImage'])$(id).disabled=!ready;
+ if(!ready){imageSignature='';riskImageData='';$('riskImage').hidden=true;$('riskImageEmpty').hidden=false;return;}
+ const a=assess(),signature=getSnapSignature(a);
+ if(!force && signature===imageSignature)return;
+ const imgData=drawRiskGraphic(a).toDataURL('image/png');
+ $('riskImage').src=imgData;$('riskImage').hidden=false;$('riskImageEmpty').hidden=true;riskImageData=imgData;imageSignature=signature;
+}
+function requestRiskImageUpdate(){clearTimeout(snapDelay);snapDelay=setTimeout(()=>updateRiskImage(),170);}
+function imageBlob(){return new Promise((resolve,reject)=>getCurrentRiskCanvas().toBlob(b=>b?resolve(b):reject(new Error('圖片建立失敗')),'image/png'));}
+function safeFileLabel(s){return String(s||'未填').replace(/[\\/:*?"<>|\r\n]/g,'_').slice(0,24);}
+function downloadBlob(b,filename){const url=URL.createObjectURL(b);const el=document.createElement('a');el.href=url;el.download=filename;document.body.appendChild(el);el.click();el.remove();setTimeout(()=>URL.revokeObjectURL(url),8000);}
+function riskImageFilename(){return '手機風險結果_'+safeFileLabel($('person').value)+'_'+new Date().toLocaleDateString('sv-SE')+'.png';}
+async function downloadRiskGraphic(){try{downloadBlob(await imageBlob(),riskImageFilename());$('mailStatus').textContent='已產生本次填答的 PNG 圖片，可在 Outlook 插入圖片或作為附件。';}catch(e){$('mailStatus').textContent='無法產生圖片：'+e.message;}}
+async function copyRiskGraphic(){
+ if(!complete())return;
+ try{
+  const blob=await imageBlob();
+  if(!navigator.clipboard?.write||typeof ClipboardItem==='undefined')throw new Error('目前瀏覽器不支援圖片剪貼簿');
+  await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+  $('mailStatus').classList.remove('error');$('mailStatus').textContent='✅ 已複製本次圖像！請按「開啟 Outlook 文字草稿」，在郵件內文按 Ctrl+V 貼上圖片，再傳送。';
+ }catch(e){$('mailStatus').classList.add('error');$('mailStatus').textContent='此瀏覽器無法複製圖片。請改用「下載 PNG 圖片」並在 Outlook 手動插入或夾帶。';}
+}
+function utf8Base64(s){const bytes=new TextEncoder().encode(s);let out='';for(let i=0;i<bytes.length;i+=8192)out+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(out);}
+function wrap76(s){return (s.match(/.{1,76}/g)||[]).join('\r\n');}
+function headerUtf8(str){return '=?UTF-8?B?'+utf8Base64(str)+'?=';}
+function emlEmailHTML(a){
+ const escaped=(s)=>esc(s);
+ const rows=[['評估時間',new Date().toLocaleString('zh-TW',{hour12:false})],['評估人',$('person').value.trim()||'未填'],['區域／站點',$('site').value.trim()||'未填'],['勤務',a.task.zh+' / '+a.task.en],['手機使用時機',stageName(a.stage)],['風險總分',a.score+'/100'],['判定結果',emailDecision(a)],['重大危害排除',a.locked?'是':'否'],['環境 / 勤務 / 被撞',a.groupSum.env+' / '+(a.base+a.groupSum.duty)+' / '+a.groupSum.hit]];
+ const tr=rows.map(([k,v])=>'<tr><th style="text-align:left;background:#eef8f2;border:1px solid #dcefe5;padding:10px 14px;width:33%;font-weight:700">'+escaped(k)+'</th><td style="border:1px solid #dcefe5;padding:10px 14px">'+escaped(v)+'</td></tr>').join('');
+ const risks=a.selected.map(x=>'<li>'+escaped(x.text)+'</li>').join('')||'<li>無額外勾選風險</li>';
+ const reasons=a.reasons.length?'<h3>重大危害排除原因</h3><ul>'+a.reasons.map(x=>'<li>'+escaped(x)+'</li>').join('')+'</ul>':'';
+ return '<!doctype html><html><head><meta charset="UTF-8"></head><body style="background:#f2f9f4;padding:20px;color:#184d47;font-family:Arial,Microsoft JhengHei,sans-serif">'
+ +'<table cellpadding="0" cellspacing="0" style="max-width:660px;background:white;border-radius:14px;margin:0 auto;width:100%"><tr><td style="padding:25px"><h1 style="color:#075f56">廠區手機使用適宜性｜檢核結果</h1><p>以下是本次填答者專屬結果圖，請參照現場制度核實判定。</p>'
+ +'<p><img src="cid:risk-chart@mobile-check" alt="三圈風險結果圖" width="590" style="max-width:100%;height:auto;border:1px solid #d7eee2;border-radius:10px"></p><table style="border-collapse:collapse;width:100%">'+tr+'</table>'
+ +'<h3>已辨識風險</h3><ul>'+risks+'</ul>'+reasons+'<h3>改善建議</h3><p>'+escaped(emailAdvice(a))+'</p>'
+ +'<p style="font-size:12px;color:#718a81">此分數為內部示範評分模型；實際使用條件請依公司規範、現場管制及主管確認。</p></td></tr></table></body></html>';
+}
+function verifyEmailFields(){
+ for(const id of ['mailTo','mailCc']){if(!$(id).checkValidity()){$('mailStatus').classList.add('error');$('mailStatus').textContent='請先修正收件人／副本地址格式。';$(id).focus();return false;}}
+ return true;
+}
+async function generateOutlookPictureMail(){
+ if(!complete()||!verifyEmailFields())return;
+ try{
+  const a=assess();const png=(await imageBlob());const bytes=new Uint8Array(await png.arrayBuffer());
+  let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));
+  const picb64=btoa(binary);
+  const to=$('mailTo').value.trim(),cc=$('mailCc').value.trim();
+  const subj='【手機使用風險評估】'+emailDecision(a)+'｜'+($('site').value.trim()||'未填')+'｜'+($('person').value.trim()||'未填');
+  const bound='risk-img-'+Date.now().toString(36);
+  const lines=['X-Unsent: 1','MIME-Version: 1.0','To: '+to];
+  if(cc)lines.push('Cc: '+cc);
+  lines.push('Subject: '+headerUtf8(subj),'Content-Type: multipart/related; boundary="'+bound+'"','', 'This is a MIME multipart message.','',
+  '--'+bound,'Content-Type: text/html; charset="utf-8"','Content-Transfer-Encoding: base64','',wrap76(utf8Base64(emlEmailHTML(a))),'',
+  '--'+bound,'Content-Type: image/png; name="risk-chart.png"','Content-Transfer-Encoding: base64',
+  'Content-ID: <risk-chart@mobile-check>','Content-Disposition: inline; filename="risk-chart.png"','',wrap76(picb64),'',
+  '--'+bound+'--','');
+  // Headers are ASCII (RFC2047 for Chinese Subject); body HTML is UTF-8 encoded as MIME base64.
+  downloadBlob(new Blob([lines.join('\r\n')],{type:'message/rfc822'}),'Outlook圖文郵件_'+safeFileLabel($('person').value)+'_'+new Date().toLocaleDateString('sv-SE')+'.eml');
+  $('mailStatus').classList.remove('error');$('mailStatus').textContent='✅ 已下載含本次風險圖片的 .eml 郵件。請用 Outlook 開啟，確認圖片、收件人及內容後按「傳送」。若新版 Outlook 圖片缺失，請用 PNG 複製貼上流程。';
+ }catch(e){$('mailStatus').classList.add('error');$('mailStatus').textContent='圖文郵件建立失敗：'+e.message;}
+}
+
+initChecks();fillTasks();update();document.querySelectorAll('input').forEach(x=>{if(x.id==='taskSearch')return;x.addEventListener('input',update);x.addEventListener('change',update);});$('task').addEventListener('change',update);$('taskSearch').addEventListener('input',e=>{fillTasks(e.target.value);update();});$('demoDock').addEventListener('click',()=>putDemo('dock'));$('demoOffice').addEventListener('click',()=>putDemo('office'));$('showResult').addEventListener('click',()=>{if(!complete())return;approved=true;renderResult(assess());$('result-panel').scrollIntoView({behavior:'smooth',block:'center'});});$('exportCsv').addEventListener('click',saveCsv);$('printBtn').addEventListener('click',()=>{if(complete())window.print()});$('resetBtn').addEventListener('click',()=>reset());$('sendOutlook').addEventListener('click',openOutlook);$('copyReport').addEventListener('click',copyFullReport);$('mailTo').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('mailCc').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('copyRiskImage').addEventListener('click',copyRiskGraphic);$('downloadRiskImage').addEventListener('click',downloadRiskGraphic);$('emlRiskImage').addEventListener('click',generateOutlookPictureMail);
 </script>
 </body>
 </html>
