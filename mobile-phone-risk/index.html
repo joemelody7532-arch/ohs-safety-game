@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0e2444">
+<title>廠區手機使用適宜性｜三圈風險線上檢核</title>
+<style>
+:root{--ink:#0f2543;--muted:#677991;--line:#e1e9f2;--bg:#f3f7fc;--blue:#1769cf;--green:#138a63;--orange:#ef8c21;--red:#e24846;--shadow:0 10px 36px rgba(26,56,95,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8bbfff;outline-offset:2px}a{color:inherit;text-decoration:none}.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+.top{background:#102748;color:#fff}.top-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:900;letter-spacing:.3px}.brandmark{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:#ffb947;color:#102748;font-size:23px}.top-meta{font-size:12px;color:#d1e0f1;border:1px solid #436381;border-radius:999px;padding:8px 12px}
+.hero{position:relative;overflow:hidden;color:white;background:radial-gradient(circle at 86% 16%,#367cbd 0,transparent 37%),linear-gradient(110deg,#0d2f57,#195187 65%,#0e305a);padding:42px 0 51px}.hero::after{content:"";position:absolute;width:310px;height:310px;border:48px solid rgba(255,255,255,.04);border-radius:50%;right:-90px;top:-154px}.hero-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.eyebrow{font-size:12px;color:#b9dafa;letter-spacing:2px;font-weight:800}.hero h1{font-size:clamp(28px,3.8vw,43px);line-height:1.3;margin:11px 0 8px;letter-spacing:1px}.hero h1 em{font-style:normal;color:#ffdb70}.hero p{max-width:730px;margin:0;color:#dbebfc;font-size:15px}.hero-highlight{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid #658aaf;border-radius:999px;padding:8px 13px;font-weight:800;font-size:13px;margin-top:22px}.hero-art{width:265px;min-width:265px;position:relative;isolation:isolate}.hero-art .emoji{font-size:91px;text-align:center;filter:drop-shadow(0 10px 8px #0a2d52aa)}.hero-art .bubble{position:absolute;background:#fff;color:#d92f38;padding:10px 14px;font-weight:900;font-size:13px;border-radius:17px;box-shadow:0 10px 20px #09244066;top:5px;right:4px;transform:rotate(7deg)}.hero-art .floor{height:10px;width:220px;position:absolute;left:20px;bottom:3px;background:#072645;border-radius:50%;opacity:.5}
+.steps{display:flex;align-items:center;gap:9px;margin-top:25px;flex-wrap:wrap}.step{display:flex;align-items:center;gap:8px;color:#c4d9ef;font-size:13px;font-weight:700}.step b{display:grid;place-items:center;width:26px;height:26px;background:#e7f3ff;color:#14568e;border-radius:50%;font-size:12px}.step-line{height:1px;width:23px;background:#a3bcd5}.step.active{color:#fff}.step.active b{background:#ffcc51;color:#163258}
+.main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(325px,.85fr);align-items:start;gap:19px;margin-top:-23px;position:relative;z-index:2;padding-bottom:38px}.stack{display:flex;flex-direction:column;gap:16px}.panel{background:#fff;border:1px solid #e3eaf1;border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.panel-pad{padding:23px}.panel-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}.panel-title .mini{font-size:22px}.panel-title h2{font-size:19px;margin:0;font-weight:900}.panel-title small{color:#7890a9;font-weight:600;font-size:12px;margin-left:auto}.intro{color:var(--muted);font-size:13px;margin:2px 0 19px}.field-label{display:block;font-weight:800;font-size:14px;margin-bottom:8px}.gridmeta{display:grid;grid-template-columns:1fr 1fr;gap:12px}.text-field,.select,.search{width:100%;border:1px solid #d5e0ec;background:#fbfdff;border-radius:11px;padding:12px 13px;color:#153456;min-height:45px}.text-field::placeholder,.search::placeholder{color:#9baac0}.search{margin-bottom:7px;padding:10px 13px}.select{background:white;font-weight:700}.subhint{font-size:12px;color:var(--muted);margin-top:8px}.task-meta{margin-top:12px;padding:13px 15px;background:#f3f8ff;border:1px solid #deebfc;border-radius:12px}.task-meta-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;font-weight:800}.pill{border-radius:99px;padding:4px 9px;font-size:11px;font-weight:800;display:inline-flex;align-items:center;gap:5px}.pill.high{color:#a82c25;background:#ffe3e0}.pill.mid{color:#965408;background:#fff0d9}.pill.low{color:#087651;background:#ddf7e9}.en{color:#7188a2;font-size:12px;font-weight:500}.task-tips{font-size:12px;color:#536c84;margin-top:7px}
+.stage{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}.stage label{border:1px solid #dae5ef;background:#f9fbfe;border-radius:12px;padding:11px 10px;font-size:12px;font-weight:800;cursor:pointer;display:flex;align-items:flex-start;gap:6px}.stage label:has(input:checked){border-color:#1972c2;background:#eaf5ff;color:#115da4}.stage input{accent-color:var(--blue);margin:3px 0 0;flex:none}
+.section-head{padding:14px 20px;display:flex;align-items:center;gap:10px}.section-head.env{background:#e1f5e8;color:#116e43}.section-head.duty{background:#e5f1ff;color:#195eaf}.section-head.hit{background:#fff0e2;color:#b6511e}.section-head .no{font-size:14px;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;color:white;background:currentColor}.section-head .no span{color:white}.section-head.env .no{background:#14965f}.section-head.duty .no{background:#1a6dca}.section-head.hit .no{background:#e56a35}.section-head strong{font-size:17px}.section-head .sub{font-size:12px;opacity:.8;display:block}.section-body{padding:14px 16px 16px}.checks{display:grid;gap:8px}.choice{position:relative;cursor:pointer;display:flex;align-items:flex-start;gap:11px;border:1px solid #e3eaf1;background:white;border-radius:12px;padding:11px 12px;transition:.18s}.choice:hover{border-color:#adcae9;background:#f8fbff}.choice:has(input:checked){border-color:#7facdc;background:#eef7ff}.choice input{width:19px;height:19px;flex:none;margin:2px 0 0;accent-color:#1970c6}.choice .words{flex:1;min-width:0}.choice .primary{font-size:13px;font-weight:800;display:block}.choice .secondary{font-size:11px;color:#73869a;display:block;margin-top:3px}.choice .weight{font-size:11px;border-radius:50px;color:#627c95;background:#edf3f9;padding:3px 7px;font-weight:900;white-space:nowrap}.confirm-row{background:#f7f9fc;border:1px dashed #cfddeb;border-radius:11px;display:flex;gap:8px;padding:11px 12px;align-items:start;font-size:12px;font-weight:800;color:#506881;margin-top:12px;cursor:pointer}.confirm-row input{accent-color:var(--blue);width:17px;height:17px;flex:none;margin:1px 0}
+.aside{position:sticky;top:15px}.scorehead{padding:20px 22px 12px;display:flex;justify-content:space-between;align-items:center}.scorehead h2{margin:0;font-size:20px}.live{display:flex;align-items:center;gap:6px;color:#098963;font-size:12px;font-weight:800}.live::before{content:"";width:7px;height:7px;background:#1ca874;border-radius:50%;box-shadow:0 0 0 4px #e0f8ed}.venn{width:100%;height:auto;display:block;padding:0 12px 0}.venn circle{transition:.25s}.venn .v-env{fill:rgba(68,180,103,.26);stroke:#41a16c;stroke-width:2}.venn .v-duty{fill:rgba(55,142,238,.23);stroke:#398bd9;stroke-width:2}.venn .v-hit{fill:rgba(240,123,76,.25);stroke:#e97756;stroke-width:2}.venn .activated{stroke-width:4;filter:drop-shadow(0 3px 6px rgba(30,84,130,.13))}.venn .v-label{font-size:13px;font-weight:900;fill:#183e5f}.venn .v-icon{font-size:23px}.venn .v-center{fill:#fff;stroke:#bccbd9;stroke-width:1.5}.venn .center-label{font-weight:900;font-size:11px;fill:#456179}.rings-status{text-align:center;font-size:12px;color:#72859b;margin:0 0 8px}.score-area{display:flex;justify-content:center;gap:18px;align-items:center;padding:0 20px 14px}.score-dial{flex:none;width:135px;height:135px;padding:11px;border-radius:50%;background:conic-gradient(var(--blue) 0%,#e8eff6 0%);transition:background .35s}.score-inner{background:#fff;width:100%;height:100%;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center}.score-value{font-size:39px;line-height:1;font-weight:950;font-variant-numeric:tabular-nums;letter-spacing:-2px}.score-unit{font-size:11px;color:#8193a9;font-weight:700;margin-top:5px}.score-side{min-width:0}.result-title{font-size:19px;font-weight:950;margin:6px 0}.result-desc{font-size:12px;color:#688199}.rule-list{padding:13px 19px;background:#f5f8fc;border-top:1px solid #e3ebf3}.rule-list .legend{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:12px;color:#60768d;padding:6px 0}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}.legend strong{color:#224361}.stop-list{padding:16px 20px;background:#fff9f8;border-top:1px solid #ffe5e0}.stop-list h3{margin:0 0 8px;color:#c64033;font-size:14px}.stop-list ul{padding-left:19px;margin:0;color:#8d4c40;font-size:12px}.stop-list li{margin:5px 0}.tip-box{background:#eaf5ff;border-radius:13px;padding:14px 16px;margin:15px 18px 18px;font-size:12px;color:#275578}.tip-box b{display:block;font-size:14px;margin-bottom:5px}.tip-box .quote{font-size:17px;color:#1a4f89;font-weight:950}
+.result-panel{padding:22px}.result-panel h2{margin:0 0 9px;font-size:20px}.result-badge{display:inline-flex;padding:8px 13px;border-radius:999px;font-weight:900;font-size:14px}.result-box{margin-top:13px;padding:16px;background:#f4f8fc;border-radius:13px;border:1px solid #e1ebf5}.result-box p{margin:7px 0;color:#536e88;font-size:13px}.actionrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:none;background:#1b6dd0;color:white;padding:12px 15px;border-radius:11px;font-size:13px;font-weight:900;transition:.15s}.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}.btn:disabled{background:#a3b2c4;cursor:not-allowed;transform:none}.btn.light{color:#28537f;background:#e9f2fd}.btn.warn{background:#eef2f6;color:#53687f}.notice{font-size:12px;color:#8a6270;margin-top:13px}.notice.good{color:#147b5b}.report-detail{margin-top:12px;color:#577087;font-size:13px}.report-detail ul{padding-left:20px;margin:8px 0}.report-detail li{margin:4px 0}.foot{padding:0 24px 36px;text-align:center;font-size:12px;color:#8496a9}.badge-demo{font-size:11px;color:#92703d;background:#fff0d0;border-radius:99px;padding:3px 7px;display:none}.badge-demo.visible{display:inline-block}.examples{display:flex;flex-wrap:wrap;gap:9px;margin:3px 0 16px}.example{font-size:12px;font-weight:800;border:1px solid #d0ddeb;color:#195b9d;background:#eef7ff;border-radius:999px;padding:8px 13px}.example:hover{background:#dcecff}.statusline{font-size:12px;color:#7b91a5;margin-top:14px}.print-only{display:none}.fine{font-size:11px;color:#91a0b2}
+
+.mailbox{margin-top:17px;border:1px solid #c5ddf8;background:linear-gradient(140deg,#eef7ff,#f8fbff);border-radius:16px;padding:17px}
+.mailbox h3{display:flex;align-items:center;gap:8px;margin:0 0 7px;font-size:17px;color:#15538f}
+.mailbox p{margin:0 0 13px;font-size:12px;color:#57718b}
+.mailbox .mail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mailbox .field-label{font-size:12px;margin-bottom:5px}
+.mailbox .text-field{background:#fff}
+.mailbox .mail-send{font-size:15px;background:linear-gradient(110deg,#0866c2,#164a93);padding:14px 16px;box-shadow:0 6px 17px #185fba2b}
+.mailbox .mail-send:disabled{box-shadow:none}
+.mailbox .mail-actions{margin-top:12px;display:flex;gap:9px;flex-wrap:wrap}
+.mailbox .hint{color:#41627f;background:#fff;border:1px solid #dce8f6;border-radius:10px;margin-top:12px;padding:10px;font-size:12px}
+.mailbox .mail-status{font-size:12px;font-weight:700;color:#20659b;margin-top:10px;min-height:19px}
+.mailbox .mail-status.error{color:#bd3333}
+.mailbox details{font-size:12px;margin-top:10px;color:#55718a}
+.mailbox summary{cursor:pointer;font-weight:800}
+.mailbox pre{font-family:inherit;white-space:pre-wrap;overflow-wrap:anywhere;max-height:240px;overflow:auto;padding:10px;border:1px solid #e0eaf2;border-radius:9px;background:white;color:#35526d}
+@media(max-width:620px){.mailbox{padding:13px}.mailbox .mail-grid{grid-template-columns:1fr}.mailbox .mail-actions .btn{width:100%}}
+@media(max-width:900px){.main{grid-template-columns:1fr}.aside{position:static}.aside .panel{max-width:none}.hero-art{width:170px;min-width:170px}.hero-art .emoji{font-size:72px}.hero-art .bubble{font-size:10px}.score-area{gap:35px}}@media(max-width:620px){.wrap{padding-left:14px;padding-right:14px}.top-inner{height:58px}.brand{font-size:15px}.brandmark{width:32px;height:32px;font-size:17px}.top-meta{font-size:10px;padding:5px 7px}.hero{padding:30px 0 42px}.hero h1{font-size:28px;max-width:310px}.hero p{font-size:13px;max-width:300px}.hero-art{position:absolute;right:-44px;top:74px;transform:scale(.8);opacity:.45}.hero-art .bubble{display:none}.hero-inner{display:block}.hero-highlight{font-size:11px;max-width:85%}.steps{gap:5px}.step{font-size:11px;gap:4px}.step b{width:21px;height:21px}.step-line{width:9px}.main{margin-top:-16px;gap:13px}.stack{gap:13px}.panel{border-radius:15px}.panel-pad{padding:16px}.section-head{padding:11px 15px}.section-head strong{font-size:15px}.section-body{padding:12px}.stage{grid-template-columns:1fr}.stage label{font-size:13px;padding:10px}.gridmeta{grid-template-columns:1fr}.choice{padding:11px 9px;gap:8px}.choice .primary{font-size:12px}.choice .secondary{font-size:10px}.scorehead h2{font-size:18px}.venn{max-width:360px;margin:auto}.score-area{gap:20px}.score-dial{height:119px;width:119px}.score-value{font-size:34px}.result-title{font-size:18px}.result-panel{padding:17px}.btn{flex-grow:1}.examples{gap:6px}.example{font-size:11px}.foot{padding:0 18px 32px}}
+@media print{body{background:white;color:black}.top,.hero,.leftcol,.aside>section:not(#result-panel),.foot,.actionrow,.notice,.examples,.statusline,.mailbox{display:none!important}.main{display:block!important;margin:0;padding:0}.aside{display:block!important;position:static}.result-panel{box-shadow:none;border:none;max-width:100%;padding:0}.result-panel .panel-title{display:none}.print-only{display:block}.print-report{page-break-inside:avoid}.result-box{background:white}.report-detail{color:#333}#result-panel{display:block!important}}
+.share-panel{margin-top:17px;background:rgba(255,255,255,.12);border:1px solid rgba(192,220,252,.4);border-radius:14px;padding:13px 15px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:800px}.share-panel .share-copy{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1 1 270px}.share-panel .share-copy strong{font-size:13px;color:#fff}.share-panel .share-copy small{font-size:12px;color:#d3e7fa;overflow-wrap:anywhere}.share-panel button{border:1px solid #ffda76;background:#ffcf64;color:#12395b;border-radius:11px;padding:11px 16px;font-weight:900;font-size:13px;min-height:42px;flex:none}.share-panel button:disabled{background:#e3ebf4;color:#5d738a;border-color:#e3ebf4;cursor:not-allowed}.share-panel .share-notice{width:100%;font-size:12px;color:#fff5d4;min-height:1.3em}@media(max-width:620px){.share-panel{margin-top:13px;padding:12px}.share-panel button{width:100%}}@media print{.share-panel{display:none!important}}</style>
+</head>
+<body>
+<header class="top"><div class="wrap top-inner"><div class="brand"><span class="brandmark">🛡️</span><span>SAFE POINT <span style="font-weight:500;font-size:12px;color:#a6cde9">｜廠區行動安全</span></span></div><div class="top-meta">📱 手機友善 · 單檔可用</div></div></header>
+<section class="hero"><div class="wrap hero-inner"><div><div class="eyebrow">MOBILE PHONE SAFETY ASSESSMENT</div><h1>手機先停一秒，<br><em>安全多一分。</em></h1><p>廠區手機使用適宜性檢核表｜從「環境 × 勤務 × 被撞」辨識交集風險，完成評估後自動取得分數、禁止條件與改善建議。</p><div class="hero-highlight">🚦 看到車、正在作業、靠近碼頭 → 先停、先看、再決定</div><div class="share-panel" role="group" aria-label="網頁分享連結"><div class="share-copy"><strong>🔗 網址分享｜免經 ChatGPT 開啟</strong><small id="shareLocation">讀取目前網站網址中…</small></div><button type="button" id="copyShareUrl" disabled>📋 複製分享網址</button><div class="share-notice" id="shareNotice" role="status" aria-live="polite">請確認公司網路允許此網站。</div></div><div class="steps"><span class="step active"><b>1</b>選擇勤務</span><i class="step-line"></i><span class="step"><b>2</b>檢核三圈</span><i class="step-line"></i><span class="step"><b>3</b>取得判定</span></div></div><div class="hero-art" aria-hidden="true"><div class="bubble">📵 作業中，先別滑！</div><div class="emoji">👷🏻‍♂️🚛</div><div class="floor"></div></div></div></section>
+<main class="wrap main">
+<div class="stack leftcol">
+<section class="panel panel-pad" aria-labelledby="start-title"><div class="panel-title"><span class="mini">🎯</span><h2 id="start-title">選擇評估勤務</h2><span class="badge-demo" id="demoBadge">示範情境</span></div><p class="intro">已整合您的勤務資料，<strong>去除重複並保留 19 項中英對照作業</strong>。請選擇「此刻準備使用手機時」正在進行的主要工作。</p>
+<div class="examples"><button class="example" type="button" id="demoDock">🚧 試玩：內碼頭＋電動拖板車</button><button class="example" type="button" id="demoOffice">🧑🏻‍💻 試玩：安全辦公區</button></div>
+<div class="gridmeta"><div><label class="field-label" for="site">區域／站點（選填）</label><input id="site" class="text-field" placeholder="例：A棟倉庫／收貨碼頭" maxlength="80"></div><div><label class="field-label" for="person">評估人（選填）</label><input id="person" class="text-field" placeholder="填寫姓名或員工代號" maxlength="50"></div></div>
+<div style="margin-top:17px"><label class="field-label" for="taskSearch">當前勤務項目 <span style="color:#e45148">*</span> <span class="en">Job Task</span></label><input id="taskSearch" class="search" autocomplete="off" placeholder="🔎 輸入關鍵字搜尋（例：理貨、PDA、maintenance）"><select id="task" class="select" aria-label="選擇作業項目"><option value="">請選擇一項勤務作業…</option></select><div class="subhint" id="filteredCount">可選擇 19 項不同勤務</div><div class="task-meta" id="taskMeta" hidden><div class="task-meta-top"><span id="taskTag" class="pill mid">中度勤務</span><span id="taskZh"></span><span class="en" id="taskEn"></span></div><div class="task-tips" id="taskTips"></div></div></div>
+<div style="margin-top:16px"><div class="field-label">預計使用手機的時機 <span style="color:#e45148">*</span></div><div class="stage" id="stageGroup"><label><input type="radio" name="stage" value="active" checked><span>🔧 作業進行中<br><span class="en">仍在執行勤務</span></span></label><label><input type="radio" name="stage" value="paused"><span>⏸ 已暫停工作<br><span class="en">但仍在作業場域</span></span></label><label><input type="radio" name="stage" value="safe"><span>✅ 已離開現場<br><span class="en">位於實體隔離安全區</span></span></label></div></div>
+</section>
+<section class="panel"><div class="section-head env"><div class="no"><span>1</span></div><div><strong>環境風險</strong><span class="sub">Environment｜在哪裡使用手機？</span></div></div><div class="section-body"><div class="checks" id="envChecks"></div><label class="confirm-row"><input type="checkbox" class="confirmed" data-group="env"><span>我已確認環境條件，未勾選項目代表目前未發現該風險。</span></label></div></section>
+<section class="panel"><div class="section-head duty"><div class="no"><span>2</span></div><div><strong>勤務風險</strong><span class="sub">Duty｜正在做什麼？是否能分心？</span></div></div><div class="section-body"><div class="checks" id="dutyChecks"></div><label class="confirm-row"><input type="checkbox" class="confirmed" data-group="duty"><span>我已確認勤務內容與手機使用時機，未勾選項目代表目前未發現該風險。</span></label><p class="subhint">📦 PDA 為經授權的作業設備，<strong>不等於私人手機可在揀貨期間自由使用</strong>。</p></div></section>
+<section class="panel"><div class="section-head hit"><div class="no"><span>3</span></div><div><strong>被撞風險</strong><span class="sub">Struck-by｜車、人、設備有沒有靠近？</span></div></div><div class="section-body"><div class="checks" id="hitChecks"></div><label class="confirm-row"><input type="checkbox" class="confirmed" data-group="hit"><span>我已確認附近的移動車輛與人車交會風險，未勾選項目代表目前未發現該風險。</span></label></div></section>
+</div>
+<aside class="aside stack"><section class="panel"><div class="scorehead"><h2>🟢 三圈即時風險地圖</h2><span class="live">即時計算</span></div>
+<svg class="venn" viewBox="0 0 370 277" role="img" aria-label="環境、勤務、被撞三圈風險交集圖"><circle id="circle-env" class="v-env" cx="152" cy="111" r="87"/><circle id="circle-duty" class="v-duty" cx="225" cy="111" r="87"/><circle id="circle-hit" class="v-hit" cx="188" cy="176" r="87"/><text class="v-icon" x="110" y="88">🏭</text><text class="v-label" x="107" y="108">環境</text><text class="v-icon" x="250" y="86">👷</text><text class="v-label" x="250" y="107">勤務</text><text class="v-icon" x="175" y="223">🚛</text><text class="v-label" x="176" y="245">被撞</text><circle class="v-center" cx="188" cy="142" r="29"/><text x="188" y="139" text-anchor="middle" style="font-size:22px">📵</text><text class="center-label" x="188" y="159" text-anchor="middle">交集</text></svg>
+<p class="rings-status" id="ringsStatus">選擇勤務並勾選風險，觀察三圈如何變化</p>
+<div class="score-area"><div class="score-dial" id="scoreDial"><div class="score-inner"><span class="score-value" id="score">0</span><span class="score-unit">風險分數 / 100</span></div></div><div class="score-side"><div class="en">LIVE RISK LEVEL</div><div class="result-title" id="level">待完成評估</div><div class="result-desc" id="levelDesc">作業選擇及三圈確認完成後，可取得正式判定。</div></div></div>
+<div class="rule-list"><div class="legend"><span><i class="dot" style="background:#0f9c6b"></i>0–24 分</span><strong>可使用／安全區</strong></div><div class="legend"><span><i class="dot" style="background:#ec9a24"></i>25–49 分</span><strong>限制使用／先排除風險</strong></div><div class="legend"><span><i class="dot" style="background:#e14844"></i>50–100 分</span><strong>禁止使用</strong></div></div>
+<div class="stop-list"><h3>⛔ 有重大危害時，直接禁止使用</h3><ul><li>行走看手機、駕駛或操作移動設備</li><li>作業中從事搬運、堆高機／輸送帶或高危險維修</li><li>於車輛動態活動區且有被撞危害</li></ul></div><div class="tip-box"><b>💡 今天最重要的一句話</b><div class="quote">「先停、先看、離開車道，才用手機！」</div></div></section>
+<section class="panel result-panel" id="result-panel"><h2>📋 整體判定與改善建議</h2><div class="print-only"><h1>廠區手機使用適宜性｜評估結果</h1><p id="printMeta"></p></div><span class="result-badge" id="resultBadge" style="background:#e9f2fd;color:#34608b">尚未完成評估</span><div class="result-box"><strong id="recommendTitle">請先完成 3 類風險檢核</strong><p id="recommendText">請選擇勤務、確認手機使用時機，並完成環境／勤務／被撞風險檢查。</p><div class="report-detail" id="reportDetails"></div></div><div class="actionrow"><button class="btn" id="showResult" disabled>🏁 完成檢核並取得結果</button><button class="btn light" id="exportCsv" disabled>⬇ 匯出 CSV</button><button class="btn light" id="printBtn" disabled>🖨 列印／PDF</button><button class="btn warn" id="resetBtn">↻ 清除重填</button></div>
+<div class="mailbox" id="mailbox">
+<h3>📧 送出檢核結果｜開啟 Outlook</h3>
+<p>填寫完成後，一鍵開啟本機預設郵件程式的新郵件草稿，自動帶入<strong>風險分數、判定、勤務、風險摘要及改善建議</strong>。</p>
+<div class="mail-grid"><div><label class="field-label" for="mailTo">收件人電子郵件（選填）</label><input id="mailTo" type="email" class="text-field" inputmode="email" autocomplete="email" maxlength="130" placeholder="例：safety@company.com"></div><div><label class="field-label" for="mailCc">副本 CC（選填）</label><input id="mailCc" type="email" class="text-field" inputmode="email" maxlength="130" placeholder="例：supervisor@company.com"></div></div>
+<div class="mail-actions"><button class="btn mail-send" id="sendOutlook" type="button" disabled>✉️ 送出｜開啟 Outlook 草稿</button><button class="btn light" id="copyReport" type="button" disabled>📋 複製完整報告</button></div>
+<div class="mail-status" id="mailStatus" role="status" aria-live="polite">完成三圈評估後，即可使用 Outlook 寄送。</div>
+<div class="hint">💻 <b>如何指定 Outlook？</b> Windows「設定 → 應用程式 → 預設應用程式」將 <b>MAILTO</b> 設為 Microsoft Outlook。若未設定收件人，會在郵件草稿中留白供填寫。<br>🔒 本頁<b>不會自動寄出或上傳</b>，請在 Outlook 按「傳送」。如需完整勾選明細，可先下載 CSV 再手動附加，或複製完整報告。</div>
+<details><summary>👁️ 預覽即將帶入郵件的內容</summary><pre id="mailPreview">完成評估後顯示郵件內容。</pre></details>
+</div><div class="notice" id="completionNotice">尚需完成：選擇勤務，以及三類風險確認。</div><div class="statusline">本檢核表不會自動傳送或儲存資料至伺服器；「送出」會交由本機郵件程式開啟草稿，必須由使用者在 Outlook 確認並傳送。</div></section></aside>
+</main><footer class="foot">本工具為內部風險溝通與示範性評分模型，非政府核定標準；「可使用」僅代表本次條件下相對適宜，仍須符合廠區管理規範、管制分區與現場主管指示。｜V3 · 2026</footer>
+<script>
+'use strict';
+const tasks=[
+{zh:'理貨驗收作業',en:'Goods Sorting & Acceptance',cat:'收貨／倉儲',w:12,rank:'mid',activeStop:false,note:'碼頭驗收先確認車輛停止、交接安全，再移至安全區使用手機。'},
+{zh:'物料搬運作業',en:'Material Handling Process',cat:'搬運／處理',w:18,rank:'high',activeStop:true,note:'搬運中須觀察周圍與保持雙手控制物料，不應同時使用私人手機。'},
+{zh:'貨物儲存作業',en:'Goods Storage Process',cat:'收貨／倉儲',w:13,rank:'mid',activeStop:true,note:'上架、下架與庫位移動前確認人車分流，需聯絡時先停止作業。'},
+{zh:'棧板處理',en:'Pallets Disposal',cat:'搬運／處理',w:15,rank:'mid',activeStop:true,note:'搬動、堆疊或報廢棧板時，避免因分心發生夾傷、絆倒或碰撞。'},
+{zh:'電腦文書處理作業',en:'Computer Documentation Process',cat:'辦公／行政',w:4,rank:'low',activeStop:false,note:'在固定、安全且與車輛動線隔離的位置，風險通常較低。'},
+{zh:'產品報廢作業',en:'Product Scrap Process',cat:'搬運／處理',w:13,rank:'mid',activeStop:true,note:'分類、破壞與搬移報廢品時先專注，完成後再使用手機。'},
+{zh:'包材處理',en:'Packaging Material Disposal',cat:'搬運／處理',w:13,rank:'mid',activeStop:true,note:'處理紙箱、棧板膜與回收物時留意利器、障礙物及動線。'},
+{zh:'放行貼標作業',en:'Release Labeling Process',cat:'收貨／倉儲',w:10,rank:'mid',activeStop:false,note:'需核對正確品項與標籤，避免分心造成標示錯誤。'},
+{zh:'溫度監控記錄',en:'Temperature Monitoring',cat:'收貨／倉儲',w:7,rank:'low',activeStop:false,note:'需區分安全的固定記錄點與冰庫／車輛出入口等不適宜地點。'},
+{zh:'PDA揀貨作業',en:'PDA Picking Process',cat:'收貨／倉儲',w:15,rank:'mid',activeStop:true,note:'PDA 屬核准的工作設備，操作仍須注意行走與交通動線；不可邊揀貨邊用私人手機。'},
+{zh:'輸送帶搬運作業',en:'Conveyor Belt Operation',cat:'搬運／處理',w:22,rank:'high',activeStop:true,note:'輸送帶運轉、故障排除或物品移載時，應避免任何額外分心。'},
+{zh:'堆高機/升降機維護',en:'Forklift/Elevator Maintenance',cat:'設備／維護',w:24,rank:'high',activeStop:true,note:'維修前確實執行設備隔離、斷能／上鎖掛牌等適用程序，勿邊修邊滑手機。'},
+{zh:'照明系統維護',en:'Lighting System Maintenance',cat:'設備／維護',w:18,rank:'high',activeStop:true,note:'高處及電氣維修須保持專注，確認能源隔離與安全措施。'},
+{zh:'辦公設備維護',en:'Office Equipment Maintenance',cat:'設備／維護',w:8,rank:'low',activeStop:false,note:'若需拆裝設備或進行電氣處理，停止操作再用手機。'},
+{zh:'車輛運送作業',en:'Vehicle Transportation',cat:'運輸作業',w:25,rank:'high',activeStop:true,note:'駕駛過程禁止操作手機；必要通訊須依規範安全停車後進行。'},
+{zh:'空調保養維修',en:'Air Conditioning Maintenance',cat:'設備／維護',w:21,rank:'high',activeStop:true,note:'可能涉及高處、電氣或轉動部件，維修時不應被手機干擾。'},
+{zh:'發電機保養維修',en:'Generator Maintenance',cat:'設備／維護',w:23,rank:'high',activeStop:true,note:'設備運轉與維護涉及噪音、電氣與轉動部件；依適用維修程序處理。'},
+{zh:'更換事務機碳粉匣',en:'Toner Cartridge Replacement',cat:'辦公／行政',w:7,rank:'low',activeStop:false,note:'依設備作業程序更換碳粉匣，避免分心與不當接觸粉塵。'},
+{zh:'冰庫加工作業',en:'Freezer Processing',cat:'搬運／處理',w:19,rank:'high',activeStop:true,note:'低溫、濕滑及PPE會降低操作與反應能力，使用手機前須離開作業區。'}
+];
+const checks={
+ env:[
+ {id:'dockIn',text:'碼頭內｜拖板車、電動拖板車、堆高機進出',sub:'月台內裝卸、拖板車搬運、堆高機轉向',w:18},
+ {id:'dockOut',text:'碼頭外｜貨車、聯結車、倒車與裝卸作業',sub:'月台外車道、倒車靠站、卸貨區',w:20},
+ {id:'warehouseTraffic',text:'廠區內｜堆高機／電動拖板車運行動線',sub:'倉儲通道、自走式拖板車、人車交會區',w:17},
+ {id:'blind',text:'交叉路口、狹窄通道、視線死角',sub:'貨架端點、彎道、轉角、遮蔽視線位置',w:12},
+ {id:'poor',text:'照明不足、濕滑地面、高低差或低溫冰庫',sub:'不易察覺車輛、障礙物、滑倒風險',w:9}
+ ],
+ duty:[
+ {id:'operate',text:'正在操作車輛、機械、升降設備或電動工具',sub:'需手控設備，任何分心均可能引發事故',w:20},
+ {id:'hands',text:'需雙手作業、持續核對或專注辨識',sub:'搬運、驗收、掃碼、貼標、分類、維護',w:12},
+ {id:'maintenance',text:'正在進行設備維修、異常處理或復機確認',sub:'如堆高機、輸送帶、空調、發電機、照明',w:16},
+ {id:'pda',text:'正在操作工作用 PDA／掃碼設備',sub:'辨識「核准工作設備」與「私人手機」不同',w:7}
+ ],
+ hit:[
+ {id:'forklift',text:'附近有堆高機行駛、轉彎或叉舉作業',sub:'含前移式堆高機、棧板升降作業',w:20},
+ {id:'electricPallet',text:'附近有電動拖板車／自走式搬運車移動',sub:'倉儲走道、碼頭內搬運、停靠與啟動',w:18},
+ {id:'manualPallet',text:'附近有手動拖板車或棧板車移動',sub:'腳部、腳跟及路徑碰撞風險',w:10},
+ {id:'truck',text:'附近有貨車、聯結車或廂型車進出／倒車',sub:'碼頭外、倒車警示、人車交會處',w:22},
+ {id:'walking',text:'預計邊走邊看手機或穿越作業動線',sub:'移動時視線離開前方，降低反應時間',w:22}
+ ]
+};
+const $=id=>document.getElementById(id);
+let demoMode=false;
+let approved=false;
+const allChecks=Object.entries(checks).flatMap(([group,values])=>values.map(x=>({...x,group})));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function initChecks(){for(const group of ['env','duty','hit']){$(group+'Checks').innerHTML=checks[group].map(c=>`<label class="choice"><input type="checkbox" data-id="${c.id}" data-group="${group}"><span class="words"><span class="primary">${esc(c.text)}</span><span class="secondary">${esc(c.sub)}</span></span><span class="weight">+${c.w}</span></label>`).join('');}}
+function fillTasks(term='') {const select=$('task');const previous=select.value;const q=term.trim().toLocaleLowerCase();const found=tasks.map((x,i)=>({x,i})).filter(({x})=>[x.zh,x.en,x.cat].some(s=>s.toLocaleLowerCase().includes(q)));let options='<option value="">請選擇一項勤務作業…</option>';for(const cat of [...new Set(found.map(v=>v.x.cat))]){options+=`<optgroup label="${esc(cat)}">`+found.filter(v=>v.x.cat===cat).map(({x,i})=>`<option value="${i}">${esc(x.zh)}｜${esc(x.en)}</option>`).join('')+'</optgroup>';};select.innerHTML=options;select.value=found.some(x=>String(x.i)===previous)?previous:'';$('filteredCount').textContent=`目前顯示 ${found.length} / 19 項作業（重複項目已合併）`;}
+function getSelected(){const id=$('task').value;return id===''?null:tasks[+id];}
+function getStage(){return document.querySelector('input[name="stage"]:checked').value;}
+function selectedChecks(){return allChecks.filter(c=>document.querySelector(`[data-id="${c.id}"]`)?.checked);}
+function complete(){return Boolean(getSelected())&&document.querySelectorAll('.confirmed:checked').length===3;}
+function assess(){const task=getSelected();const selected=selectedChecks();const selectedIds=new Set(selected.map(x=>x.id));const stage=getStage();const groupSum=Object.fromEntries(['env','duty','hit'].map(g=>[g,selected.filter(x=>x.group===g).reduce((s,x)=>s+x.w,0)]));const base=task?Math.round(task.w*(stage==='active'?1:stage==='paused'?.45:.15)):0;
+let raw=base+groupSum.env+groupSum.duty+groupSum.hit; if(stage==='safe') raw=Math.max(0,raw-12);const score=Math.min(100,Math.max(0,Math.round(raw)));
+const reasons=[];
+if(selectedIds.has('walking'))reasons.push('行走或穿越作業動線時查看手機');
+if(selectedIds.has('operate')&&stage==='active')reasons.push('勤務中操作車輛或機械設備');
+if(task?.activeStop&&stage==='active')reasons.push('目前勤務涉及搬運、移動設備或高注意力作業');
+if(selectedIds.has('truck')&&stage!=='safe')reasons.push('貨車或聯結車在附近進出／倒車');
+if(stage!=='safe'&&(selectedIds.has('dockIn')||selectedIds.has('dockOut'))&&['forklift','electricPallet','truck'].some(id=>selectedIds.has(id))) reasons.push('碼頭作業區同時存在車輛或動力搬運設備');
+if(stage!=='safe'&&selectedIds.has('warehouseTraffic')&&(selectedIds.has('forklift')||selectedIds.has('electricPallet')))reasons.push('廠區人車共用動線有移動設備活動');
+if(stage==='safe'&&(['dockIn','dockOut','warehouseTraffic'].some(id=>selectedIds.has(id))||['truck','forklift','electricPallet'].some(id=>selectedIds.has(id))))reasons.push('勾選「隔離安全區」但同時存在車道／碼頭風險，請確認是否真正隔離');
+const locked=reasons.length>0;
+const level=locked||score>=50?'red':score>=25?'amber':'green';
+return{task,stage,selected,score,groupSum,base,locked,reasons,level};}
+function updateTaskMeta(){const task=getSelected();$('taskMeta').hidden=!task;if(task){$('taskZh').textContent=task.zh;$('taskEn').textContent=task.en;$('taskTips').textContent='安全提醒：'+task.note;const tag=$('taskTag');tag.className='pill '+task.rank;tag.textContent=task.rank==='high'?'高注意力勤務':task.rank==='mid'?'中度注意力勤務':'低度注意力勤務';}}
+function update(){const a=assess();const {score,level,selected,task,locked,reasons}=a;const color=level==='red'?'#e14844':level==='amber'?'#e69a24':'#19a476';$('scoreDial').style.background=`conic-gradient(${color} ${score}%, #e8eff6 ${score}% 100%)`;$('score').textContent=score;$('score').style.color=color;
+$('level').textContent=level==='red'?'禁止使用':level==='amber'?'限制使用':complete()?'可使用':'待完成評估';$('level').style.color=complete()?color:'#6f829a';$('levelDesc').textContent=locked?'觸發重大風險條件：即使分數未達門檻也禁止使用。':level==='red'?'風險分數偏高，應停止手機使用。':level==='amber'?'先暫停作業並移至指定安全區。':complete()?'本次條件下相對低風險，仍須遵守現場規範。':'目前僅供即時預覽，完成確認後才正式判定。';
+for(const g of ['env','duty','hit']){$('circle-'+g).classList.toggle('activated',g==='duty'&&task!==null||selected.some(x=>x.group===g));}const active=['環境','勤務','被撞'].filter((_,i)=>[a.groupSum.env>0,!!task,a.groupSum.hit>0][i]);$('ringsStatus').textContent=active.length===3?'⚠️ 三圈風險交集：請優先排除危害':active.length===2?'⚠️ 兩類風險同時存在：提高警覺':active.length===1?'已辨識 '+active[0]+' 風險':'勾選風險即可觀察風險交集';
+const missing=[];if(!task)missing.push('選擇勤務');for(const [id,title] of [['env','環境'],['duty','勤務'],['hit','被撞']]){if(!document.querySelector(`.confirmed[data-group="${id}"]`).checked)missing.push(title+'確認');}const ready=complete();$('showResult').disabled=!ready;$('exportCsv').disabled=!ready;$('printBtn').disabled=!ready;$('completionNotice').textContent=ready?'✅ 三圈評估已完成，可取得正式判定、列印或匯出。':'尚需完成：'+missing.join('、')+'。';$('completionNotice').classList.toggle('good',ready);updateMailPanel();if(ready){renderResult(a);}else{approved=false;$('resultBadge').textContent='尚未完成評估';$('resultBadge').style.cssText='background:#e9f2fd;color:#34608b';$('recommendTitle').textContent='請先完成 3 類風險檢核';$('recommendText').textContent='請選擇勤務、確認手機使用時機，並完成環境／勤務／被撞風險檢查。';$('reportDetails').innerHTML='';}
+updateTaskMeta();}
+function labelsFor(a){return a.selected.map(x=>x.text);}
+function renderResult(a){const color=a.level==='red'?'#c12f31':a.level==='amber'?'#9d640a':'#087856';const bg=a.level==='red'?'#ffe8e7':a.level==='amber'?'#fff1d6':'#dff6ea';const levelLabel=a.level==='red'?'⛔ 禁止使用手機':a.level==='amber'?'⚠️ 限制使用手機':'✅ 可於安全區使用手機';$('resultBadge').textContent=`${levelLabel}｜${a.score} / 100 分`;$('resultBadge').style.background=bg;$('resultBadge').style.color=color;const advice=a.level==='red'?'先停止手機操作，確認車輛／設備安全，離開碼頭與車輛動線，移至指定安全區後重新評估。':a.level==='amber'?'先停止手上工作，移往實體隔離的安全地點；排除車輛、通道與操作風險後，再重新評估。':'評估顯示相對低風險，仍應停留在核准的安全位置，不邊走邊看手機，並服從現場管制要求。';$('recommendTitle').textContent=a.level==='red'?'高風險警示｜立即排除條件':a.level==='amber'?'先停下來｜降低風險後再使用':'可使用不等於隨時可用';$('recommendText').textContent=advice;let html=`<div>勤務：<strong>${esc(a.task.zh)}</strong> <span class="en">(${esc(a.task.en)})</span></div><div>手機使用時機：${esc(stageName(a.stage))}</div><div>風險組成：勤務基礎 ${a.base} 分 · 環境 ${a.groupSum.env} 分 · 勤務附加 ${a.groupSum.duty} 分 · 被撞 ${a.groupSum.hit} 分${a.stage==='safe'?' · 隔離安全區調整 -12 分':''}</div>`;if(a.reasons.length)html+=`<p style="color:#b23435;font-weight:900">⚠️ 重大風險／需確認：</p><ul>${a.reasons.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;html+=`<p><strong>已辨識危害（${a.selected.length} 項）</strong></p>`+(a.selected.length?`<ul>${labelsFor(a).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<div>無勾選額外危害。</div>');$('reportDetails').innerHTML=html;$('printMeta').textContent=`評估日期：${new Date().toLocaleString('zh-TW')} ｜ 區域：${$('site').value||'未填'} ｜ 評估人：${$('person').value||'未填'}`;}
+function stageName(stage){return stage==='active'?'作業進行中':stage==='paused'?'工作已暫停，仍在作業場域':'已離開現場，位於實體隔離安全區';}
+function putDemo(which){reset(false);demoMode=true;$('demoBadge').classList.add('visible');if(which==='dock'){$('site').value='收貨碼頭（內）';$('task').value=String(tasks.findIndex(t=>t.zh==='物料搬運作業'));document.querySelector('input[name="stage"][value="active"]').checked=true;['dockIn','warehouseTraffic','operate','hands','electricPallet'].forEach(id=>document.querySelector(`[data-id="${id}"]`).checked=true);}else{$('site').value='辦公區';$('task').value=String(tasks.findIndex(t=>t.zh==='電腦文書處理作業'));document.querySelector('input[name="stage"][value="safe"]').checked=true;}document.querySelectorAll('.confirmed').forEach(el=>el.checked=true);update();$('result-panel').scrollIntoView({behavior:'smooth',block:'center'});}
+function reset(doScroll=true){document.querySelectorAll('input[type="checkbox"]').forEach(el=>el.checked=false);document.querySelector('input[name="stage"][value="active"]').checked=true;$('site').value='';$('person').value='';$('taskSearch').value='';fillTasks('');$('task').value='';demoMode=false;$('demoBadge').classList.remove('visible');update();if(doScroll)window.scrollTo({top:0,behavior:'smooth'});}
+function saveCsv(){if(!complete())return;const a=assess();const level=a.level==='red'?'禁止使用':a.level==='amber'?'限制使用':'可使用';const rows=[['項目','內容'],['評估日期',new Date().toLocaleString('zh-TW')],['區域／站點',$('site').value],['評估人',$('person').value],['勤務（中文）',a.task.zh],['勤務（英文）',a.task.en],['使用時機',stageName(a.stage)],['風險總分（滿分100）',String(a.score)],['使用判定',level],['重大危害直接排除',a.locked?'是':'否'],['勤務基礎分數',String(a.base)],['環境分數',String(a.groupSum.env)],['勤務附加分數',String(a.groupSum.duty)],['被撞分數',String(a.groupSum.hit)],...a.selected.map((x,i)=>['風險'+(i+1),`${x.group.toUpperCase()}｜${x.text}`]),...a.reasons.map((x,i)=>['禁止／複核原因'+(i+1),x]),['說明','本評分為內部示範風險模型，非政府核定標準；須依公司作業規範與實際危害評估。']];const csv='\ufeff'+rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));const link=document.createElement('a');link.href=url;link.download='廠區手機風險評估_'+new Date().toISOString().slice(0,10)+'.csv';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
+
+// MAILTO will open the operating system's default email handler. Outlook must be configured for MAILTO.
+function emailDecision(a){return a.level==='red'?'禁止使用手機':a.level==='amber'?'限制使用手機':'可於指定安全區使用手機';}
+function emailAdvice(a){return a.level==='red'?'停止使用手機，停止或完成作業後，離開碼頭、車道及動力設備範圍，再至指定安全區重新評估。':a.level==='amber'?'先停止工作並移往實體隔離之指定安全區；排除車輛、通道與設備風險後重新評估。':'限於評估確認的安全位置使用；禁止邊走邊看手機，並遵守現場主管及管理規範。';}
+function buildReport(a, compact=false){
+ const now=new Date().toLocaleString('zh-TW',{hour12:false});
+ const lines=[
+ '【廠區手機使用適宜性｜三圈風險檢核結果】',
+ '評估時間：'+now,
+ '區域／站點：'+($('site').value.trim()||'未填'),
+ '評估人：'+($('person').value.trim()||'未填'),
+ '勤務：'+a.task.zh+' / '+a.task.en,
+ '手機使用時機：'+stageName(a.stage),
+ '',
+ '【整體判定】',
+ '風險總分：'+a.score+' / 100 分',
+ '建議結果：'+emailDecision(a),
+ '重大危害直接排除：'+(a.locked?'是':'否'),
+ '風險組成：勤務基礎 '+a.base+'｜環境 '+a.groupSum.env+'｜勤務附加 '+a.groupSum.duty+'｜被撞 '+a.groupSum.hit+(a.stage==='safe'?'｜安全區調整 -12':''),
+ '',
+ '【已勾選之風險】'
+ ];
+ for(const [key,label] of [['env','環境'],['duty','勤務'],['hit','被撞']]){
+  const found=a.selected.filter(x=>x.group===key);
+  const limit=compact?2:Number.MAX_SAFE_INTEGER;
+  lines.push(label+'：'+(found.length?found.slice(0,limit).map(x=>x.text).join('；'):'無額外勾選'));
+  if(compact&&found.length>limit)lines.push('（'+label+'另有 '+(found.length-limit)+' 項已勾選，完整清單請另附 CSV 或複製完整報告）');
+ }
+ lines.push('', '【重大危害／複核原因】');
+ if(a.reasons.length){lines.push(...(compact?a.reasons.slice(0,3):a.reasons).map((s,i)=>(i+1)+'. '+s));if(compact&&a.reasons.length>3)lines.push('其他 '+(a.reasons.length-3)+' 項原因詳見完整報告。');}
+ else lines.push('未觸發內建重大危害排除條件。');
+ lines.push('', '【改善與使用建議】',emailAdvice(a),'', '備註：本系統為內部風險溝通示範性評分工具，正式判定以公司制度、現場管制及主管要求為準。');
+ if(compact)lines.push('（如需全部勾選明細，請另匯出 CSV 檔案，於 Outlook 手動附加。）');
+ return lines.join('\r\n');
+}
+function buildEmailSummary(a){
+ const site=($('site').value.trim()||'未填').slice(0,36);
+ const person=($('person').value.trim()||'未填').slice(0,25);
+ const now=new Date().toLocaleString('zh-TW',{hour12:false});
+ const lines=[
+  '【廠區手機使用適宜性檢核結果】',
+  '時間：'+now,
+  '區域：'+site+'；評估人：'+person,
+  '勤務：'+a.task.zh+' ('+a.task.en+')',
+  '使用時機：'+stageName(a.stage),
+  '風險分數：'+a.score+'/100',
+  '結果：'+emailDecision(a),
+  '重大危害排除：'+(a.locked?'是':'否'),
+  '分項：環境'+a.groupSum.env+'／勤務'+(a.base+a.groupSum.duty)+'／被撞'+a.groupSum.hit
+ ];
+ const risk=a.selected.slice(0,3).map(x=>x.text);
+ lines.push('主要風險：'+(risk.length?risk.join('；'):'未額外勾選')+(a.selected.length>3?'（另有'+(a.selected.length-3)+'項）':''));
+ if(a.reasons.length)lines.push('禁止／複核原因：'+a.reasons[0]+(a.reasons.length>1?' 等'+a.reasons.length+'項':''));
+ lines.push('建議：'+(a.level==='red'?'先停止使用，遠離車道、碼頭及機械，至指定安全區後重新評估。':a.level==='amber'?'暫停作業，移到安全區排除現場風險後重新評估。':'只在核准安全區使用，禁止邊走邊看手機。'));
+ lines.push('完整明細請由網頁匯出 CSV 後自行附加；本評分為內部示範。');
+ return lines.join('\r\n');
+}
+function getEmailBody(a){
+ // mailto length varies across desktop email handlers. Keep the draft concise; the full checklist is available via CSV/copy.
+ return buildEmailSummary(a);
+}
+function buildMailto(a){
+ const to=$('mailTo').value.trim();
+ const cc=$('mailCc').value.trim();
+ const date=new Date().toLocaleDateString('sv-SE');
+ const subject='【廠區手機風險檢核】'+emailDecision(a)+'｜'+($('site').value.trim()||'站點未填').slice(0,22)+'｜'+date;
+ const params=[];
+ if(cc)params.push('cc='+encodeURIComponent(cc));
+ params.push('subject='+encodeURIComponent(subject));
+ params.push('body='+encodeURIComponent(getEmailBody(a)));
+ return 'mailto:'+to+'?'+params.join('&');
+}
+function updateMailPanel(){
+ const ready=complete();
+ $('sendOutlook').disabled=!ready;
+ $('copyReport').disabled=!ready;
+ $('mailPreview').textContent=ready?getEmailBody(assess()):'完成評估後顯示郵件內容。';
+ if(!ready)$('mailStatus').textContent='完成三圈評估後，即可使用 Outlook 寄送。';
+}
+function openOutlook(){
+ if(!complete()){ $('mailStatus').textContent='請先完成三圈風險評估。';return; }
+ for(const id of ['mailTo','mailCc']){
+  if(!$(id).checkValidity()){
+   $('mailStatus').textContent='請確認郵件地址格式，或留白後於 Outlook 中填入。';
+   $('mailStatus').classList.add('error');$(id).focus();return;
+  }
+ }
+ $('mailStatus').classList.remove('error');
+ $('mailStatus').textContent='已嘗試開啟本機郵件草稿。請在 Outlook 確認收件人與內容，然後按「傳送」。若沒有開啟，請將 Outlook 設定為 MAILTO 預設程式。';
+ // Must be activated directly from the user's click; no server or background sending.
+ window.location.href=buildMailto(assess());
+}
+async function copyFullReport(){
+ if(!complete())return;
+ const full=buildReport(assess(),false);
+ let copied=false;
+ try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(full);copied=true;}}catch(_){/* local-file browsers may block clipboard access */}
+ if(!copied){const ta=document.createElement('textarea');ta.value=full;ta.style.cssText='position:fixed;opacity:0;pointer-events:none';document.body.appendChild(ta);ta.select();try{copied=document.execCommand('copy');}catch(_){}ta.remove();}
+ $('mailStatus').classList.remove('error');
+ $('mailStatus').textContent=copied?'已複製完整評估報告，可貼到 Outlook 郵件內。':'瀏覽器禁止存取剪貼簿，請展開郵件預覽，或使用 CSV 匯出功能。';
+}
+function initializeLinkSharing(){
+ const link=$('shareLocation'),btn=$('copyShareUrl'),hint=$('shareNotice');
+ const canShare=(location.protocol==='https:'||location.protocol==='http:')&&!/(^|\.)(chatgpt\.com|openai\.com|oaiusercontent\.com|chatgptusercontent\.com)$/.test(location.hostname.toLowerCase());
+ if(!canShare){link.textContent='本機預覽中；部署至網站後才有分享網址。';hint.textContent='本機版本無法直接作為公司分享連結。';return;}
+ const url=location.origin+location.pathname;link.textContent=url;btn.disabled=false;
+ btn.addEventListener('click',async()=>{
+  let copied=false;try{await navigator.clipboard.writeText(url);copied=true;}catch(_){}
+  if(!copied){const t=document.createElement('textarea');t.value=url;t.style.cssText='position:fixed;opacity:0;pointer-events:none';document.body.appendChild(t);t.select();try{copied=document.execCommand('copy');}catch(_){}t.remove();}
+  hint.textContent=copied?'✅ 網址已複製。':'若無法自動複製，請直接複製上方顯示的網址。';
+ });
+}
+initChecks();fillTasks();update();initializeLinkSharing();document.querySelectorAll('input').forEach(x=>{if(x.id==='taskSearch')return;x.addEventListener('input',update);x.addEventListener('change',update);});$('task').addEventListener('change',update);$('taskSearch').addEventListener('input',e=>{fillTasks(e.target.value);update();});$('demoDock').addEventListener('click',()=>putDemo('dock'));$('demoOffice').addEventListener('click',()=>putDemo('office'));$('showResult').addEventListener('click',()=>{if(!complete())return;approved=true;renderResult(assess());$('result-panel').scrollIntoView({behavior:'smooth',block:'center'});});$('exportCsv').addEventListener('click',saveCsv);$('printBtn').addEventListener('click',()=>{if(complete())window.print()});$('resetBtn').addEventListener('click',()=>reset());$('sendOutlook').addEventListener('click',openOutlook);$('copyReport').addEventListener('click',copyFullReport);$('mailTo').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('mailCc').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});
+</script>
+</body>
+</html>
