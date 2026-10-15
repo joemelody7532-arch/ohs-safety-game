@@ -396,8 +396,8 @@ function drawRiskGraphic(a){
  const grad=c.createLinearGradient(0,0,SNAP_W,SNAP_H);grad.addColorStop(0,'#eaf9f4');grad.addColorStop(.65,'#f9fffb');grad.addColorStop(1,'#e3f6ee');c.fillStyle=grad;c.fillRect(0,0,SNAP_W,SNAP_H);
  cardRounded(c,36,34,928,1242,36,'#ffffff','#dbede5');
  c.fillStyle='#16b57a';c.beginPath();c.arc(112,126,31,0,Math.PI*2);c.fill();
- textAt(c,'三圈風險評估結果',164,123,47,'#075d59',900);
- textAt(c,'PERSONAL RISK ASSESSMENT',165,173,18,'#6a9488',650);
+ textAt(c,'三圈即時風險地圖',164,123,47,'#075d59',900);
+
  cardRounded(c,732,97,172,49,25,'#e5f8ed');textAt(c,'已完成評估',818,121,23,'#087961',800,'center');
  const pts={env:[372,365],duty:[630,365],hit:[500,558]};const rad=196;
  for(const [key,fill,stroke] of [['env','rgba(77,191,115,.27)','#43a66e'],['duty','rgba(69,183,172,.24)','#209d9c'],['hit','rgba(250,178,83,.26)','#eba94e']]){
