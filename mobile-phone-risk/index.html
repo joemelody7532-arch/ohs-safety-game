@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#eaf8ed">
-<title>廠區手機使用適宜性｜三圈風險互動檢核 V12</title>
+<title>廠區手機使用適宜性｜三圈風險互動檢核 V13</title>
 <style>
 :root{--ink:#0f2543;--muted:#677991;--line:#e1e9f2;--bg:#f3f7fc;--blue:#1769cf;--green:#138a63;--orange:#ef8c21;--red:#e24846;--shadow:0 10px 36px rgba(26,56,95,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8bbfff;outline-offset:2px}a{color:inherit;text-decoration:none}.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
@@ -238,9 +238,9 @@ body{background:linear-gradient(180deg,#f0fbf5,#eef9f6 62%,#f9fdfa);color:var(--
   <label class="field-label" for="reasonOther" style="margin-top:12px;font-size:12px">其他用途／具體情境（選填；若勾「其他」則必填）</label>
   <input id="reasonOther" class="text-field" maxlength="160" placeholder="例：客戶傳來棧板受損照片，須立即回報批號與貨況">
   <div class="need-input-grid">
-   <div><label for="appChannel" class="field-label">B. 用什麼系統／通訊工具？</label><select id="appChannel" class="select"><option value="unknown">尚未確認系統</option><option value="company">公司核准工作 App／平台</option><option value="teams">Microsoft Teams（須依公司核准）</option><option value="line">LINE／其他一般通訊軟體（需另確認核准）</option><option value="wms">WMS／ERP／PDA 作業系統</option><option value="other">其他（於其他用途描述）</option></select></div>
-   <div><label for="deviceType" class="field-label">C. 預計使用哪種裝置？</label><select id="deviceType" class="select"><option value="unknown">尚未確認裝置</option><option value="work">公司核發／核准工作手機</option><option value="pda">公司核准 PDA／工作終端</option><option value="byod">私人手機（BYOD，需公司授權）</option></select></div>
-   <div style="grid-column:1/-1"><label for="safeAlternative" class="field-label">D. 有無可取代手機的安全做法？</label><select id="safeAlternative" class="select"><option value="unknown">尚未評估可替代方式</option><option value="pda">有：改用 PDA／WMS 指定設備</option><option value="fixed">有：移至固定辦公桌／工作站處理</option><option value="photo">有：指定拍照點／固定攝影設備</option><option value="delegate">有：由已停工且位於安全區的人員傳送</option><option value="none">暫無：系統目前只能透過手機完成（需改善流程）</option></select></div>
+   <div><label for="appChannel" class="field-label">B. 用什麼系統／通訊工具？</label><select id="appChannel" class="select"><option value="unknown">尚未確認系統</option><option value="company">公司核准工作 App／平台</option><option value="teams">Microsoft Teams（須依公司核准）</option><option value="line">LINE／其他一般通訊軟體（需另確認核准）</option><option value="pdaSystem">PDA 作業系統</option><option value="other">其他（於其他用途描述）</option></select></div>
+   <div><label for="deviceType" class="field-label">C. 預計使用哪種裝置？</label><select id="deviceType" class="select"><option value="unknown">尚未確認裝置</option><option value="work">公司核發／核准工作手機</option><option value="pda">公司核准 PDA／工作終端</option><option value="personal">私人手機</option></select></div>
+   <div style="grid-column:1/-1"><label for="safeAlternative" class="field-label">D. 有無可取代手機的安全做法？</label><select id="safeAlternative" class="select"><option value="unknown">尚未評估可替代方式</option><option value="pda">有：改用 PDA 指定設備</option><option value="fixed">有：移至固定辦公桌／工作站處理</option><option value="photo">有：指定拍照點／固定攝影設備</option><option value="delegate">有：由已停工且位於安全區的人員傳送</option><option value="none">暫無：系統目前只能透過手機完成（需改善流程）</option></select></div>
   </div>
   <div class="need-methods"><div class="need-section-title">E. 當下預計「怎麼使用」？ <small>請依真實狀態選擇</small></div>
    <div class="mini-row" role="radiogroup" aria-label="手機使用方式">
@@ -367,9 +367,9 @@ function selectedChecks(){return allChecks.filter(c=>document.querySelector(`[da
 
 // V8 — operational necessity, approved tools, and actual method are different from injury risk scores.
 const mobilePurposeNames={customer:'客戶要求回覆貨況照片',cargo:'現場貨物異常拍照',handoff:'收貨／出貨／交接資訊',quality:'品質／溫度／安全異常',chat:'即時通訊接收工作指令',audit:'稽核／巡檢改善照片',technical:'遠端支援／設備異常判讀',personal:'私人聯繫／非工作用途',other:'其他業務需求'};
-const channelNames={unknown:'尚未確認系統',company:'公司核准工作 App／平台',teams:'Microsoft Teams（待依公司核准）',line:'LINE／一般通訊軟體（需核准）',wms:'WMS／ERP／PDA 系統',other:'其他（需確認公司核准）'};
-const deviceNames={unknown:'尚未確認裝置',work:'公司核准工作手機',pda:'公司核准 PDA',byod:'私人手機 BYOD（需公司授權）'};
-const alternativeNames={unknown:'尚未評估',pda:'改用 PDA／WMS 設備',fixed:'固定辦公桌／工作站',photo:'指定拍照點／固定攝影設備',delegate:'安全區內由指定人員處理',none:'暫無替代方式（需改善）'};
+const channelNames={unknown:'尚未確認系統',company:'公司核准工作 App／平台',teams:'Microsoft Teams（待依公司核准）',line:'LINE／一般通訊軟體（需核准）',pdaSystem:'PDA 作業系統',other:'其他（需確認公司核准）'};
+const deviceNames={unknown:'尚未確認裝置',work:'公司核准工作手機',pda:'公司核准 PDA',personal:'私人手機'};
+const alternativeNames={unknown:'尚未評估',pda:'改用 PDA 指定設備',fixed:'固定辦公桌／工作站',photo:'指定拍照點／固定攝影設備',delegate:'安全區內由指定人員處理',none:'暫無替代方式（需改善）'};
 function getNeed(){
  const ids=[...document.querySelectorAll('.reason-input:checked')].map(x=>x.value);
  const reasons=ids.map(x=>mobilePurposeNames[x]);const other=$('reasonOther').value.trim();
@@ -378,7 +378,7 @@ function getNeed(){
  const app=$('appChannel').value,device=$('deviceType').value,alternative=$('safeAlternative').value;
  const job=ids.some(x=>x!=='personal');
  const noNeed=ids.length>0&&!job;
- const approvalGap=(['line','unknown','other'].includes(app)||['byod','unknown'].includes(device));
+ const approvalGap=(['line','unknown','other'].includes(app)||['personal','unknown'].includes(device));
  const safetyGap=method==='live'||(method==='stopped'&&getZone()==='plant');
  return{ids,reasons,other,app,device,alternative,method,job,noNeed,approvalGap,safetyGap,canSafe:method==='isolated'&&getStage()==='safe'};
 }
