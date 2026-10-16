@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#eaf8ed">
-<title>廠區手機使用適宜性｜三圈風險互動檢核 V19</title>
+<title>廠區手機使用適宜性｜三圈風險互動檢核 V20</title>
 <style>
 :root{--ink:#0f2543;--muted:#677991;--line:#e1e9f2;--bg:#f3f7fc;--blue:#1769cf;--green:#138a63;--orange:#ef8c21;--red:#e24846;--shadow:0 10px 36px rgba(26,56,95,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8bbfff;outline-offset:2px}a{color:inherit;text-decoration:none}.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
@@ -448,11 +448,11 @@ body{background:linear-gradient(180deg,#f0fbf5,#eef9f6 62%,#f9fdfa);color:var(--
 
 <details><summary>👁️ 預覽即將帶入郵件的內容</summary><pre id="mailPreview">完成評估後顯示郵件內容。</pre></details>
 </div><div class="notice" id="completionNotice" role="status" aria-live="polite">尚需完成：選擇勤務，以及三類風險確認。</div></section></aside>
-</main><footer class="foot">本工具為示範性風險溝通與評分模型，非政府核定標準；「可使用」僅代表本次條件下相對適宜，仍須符合廠區管理規範、管制分區與現場主管指示。｜V19 · 僅 Outlook 應用程式／廠務部門／加工區／碼頭用語／醒目副本與未完成提醒＋安全定點定位＋雙重風險計分 · 複選場域 × 分別判定 · 精簡介面 × 業務需求 × 三圈評估 · 2026</footer>
+</main><footer class="foot">本工具為示範性風險溝通與評分模型，非政府核定標準；「可使用」僅代表本次條件下相對適宜，仍須符合廠區管理規範、管制分區與現場主管指示。｜V20 · 僅 Outlook 應用程式／Facility 廠務部門／加工區／碼頭用語／醒目副本與未完成提醒＋安全定點定位＋雙重風險計分 · 複選場域 × 分別判定 · 精簡介面 × 業務需求 × 三圈評估 · 2026</footer>
 <script>
 'use strict';
 const departments=[
- {group:'辦公及支援部門',items:[['office3','3F Office｜辦公室'],['inv','Inventory Control｜庫存管理'],['cts','CTS｜CTS 部門'],['qa','QA｜品質保證'],['adm','ADM｜行政'],['hr','HR｜人力資源'],['fac','廠務'],['it','IT Division｜資訊']]},
+ {group:'辦公及支援部門',items:[['office3','3F Office｜辦公室'],['inv','Inventory Control｜庫存管理'],['cts','CTS｜CTS 部門'],['qa','QA｜品質保證'],['adm','ADM｜行政'],['hr','HR｜人力資源'],['fac','Facility｜廠務'],['it','IT Division｜資訊']]},
  {group:'物流／倉儲單位',items:[['receiving','Receiving｜收貨'],['return','Return｜退貨'],['pp','PP｜PP 部門'],['dispatch','Dispatch｜出貨'],['delivery','Delivery｜配送']]}
 ];
 function fillDepartments(){ $('department').innerHTML='<option value="">請先選擇部門…</option>'+departments.map(g=>'<optgroup label="'+esc(g.group)+'">'+g.items.map(d=>'<option value="'+esc(d[0])+'">'+esc(d[1])+'</option>').join('')+'</optgroup>').join(''); }
