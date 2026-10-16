@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#eaf8ed">
-<title>廠區手機使用適宜性｜三圈風險互動檢核 V18</title>
+<title>廠區手機使用適宜性｜三圈風險互動檢核 V19</title>
 <style>
 :root{--ink:#0f2543;--muted:#677991;--line:#e1e9f2;--bg:#f3f7fc;--blue:#1769cf;--green:#138a63;--orange:#ef8c21;--red:#e24846;--shadow:0 10px 36px rgba(26,56,95,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8bbfff;outline-offset:2px}a{color:inherit;text-decoration:none}.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
@@ -263,10 +263,9 @@ body{background:linear-gradient(180deg,#f0fbf5,#eef9f6 62%,#f9fdfa);color:var(--
 @media(max-width:690px){.zone-picks{grid-template-columns:minmax(0,1fr)}.zone-picks label{min-height:80px}.cc-contact{font-size:12px}#completionNotice{font-size:13px}}
 @media print{.cc-section,#completionNotice{break-inside:avoid}}
 
-/* V18 Outlook client / Microsoft 365 web compose */
+/* V19 Outlook application only: launches configured MAILTO handler; no webmail route */
 .outlook-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:stretch}
 .outlook-actions button{flex:1 1 185px;min-width:0;white-space:normal;line-height:1.45;min-height:47px}
-.outlook-actions .web-outlook{border-color:#70b9a9;color:#075e55;background:#f0fbf7;font-weight:850}
 .outlook-help{margin:10px 0 12px;background:#f5faf8;border:1px solid #cfe2dc;border-radius:13px;padding:10px 13px;color:#285b52;font-size:12px;line-height:1.75}
 .outlook-help summary{font-weight:800;cursor:pointer}
 .outlook-help > div{padding-top:7px}
@@ -429,8 +428,8 @@ body{background:linear-gradient(180deg,#f0fbf5,#eef9f6 62%,#f9fdfa);color:var(--
 <section class="panel result-panel" id="result-panel"><h2>📋 整體判定與改善建議</h2><div class="print-only"><h1>廠區手機使用適宜性｜評估結果</h1><p id="printMeta"></p></div><span class="result-badge" id="resultBadge" style="background:#e9f2fd;color:#34608b">尚未完成評估</span><div class="result-box"><strong id="recommendTitle">請先完成 3 類風險檢核</strong><p id="recommendText">請選擇勤務、確認手機使用時機，並完成環境／勤務／被撞風險檢查。</p><div class="report-detail" id="reportDetails"></div></div><div class="actionrow"><button class="btn" id="showResult">🔎 查看尚未完成項目</button><button class="btn light" id="exportCsv" disabled>⬇ 匯出 CSV</button><button class="btn light" id="printBtn" disabled>🖨 列印／PDF</button><button class="btn warn" id="resetBtn">↻ 清除重填</button></div>
 <div class="mailbox" id="mailbox">
 <h3>📧 送出檢核結果｜開啟 Outlook</h3>
-  <p>完成檢核後，可透過 Outlook 開啟填入風險分數與判定結果的郵件草稿，也可下載本次評估結果圖片。</p>
-<div class="mail-grid"><div><label class="field-label" for="mailTo">收件人電子郵件（選填）</label><input id="mailTo" type="email" class="text-field" inputmode="email" autocomplete="email" maxlength="130" placeholder="例：safety@company.com"></div><div class="cc-section"><div class="cc-head"><span class="cc-heading">📨 固定副本 CC（3 位）</span><span class="cc-lock">已固定帶入</span></div><input id="mailCc" type="hidden" value="pewang@zuelligpharma.com jennychen@zuelligpharma.com joechen01@zuelligpharma.com"/><div class="cc-contacts" role="list" aria-label="固定副本三位收件人"><div class="cc-contact" role="listitem"><span class="cc-dot" aria-hidden="true"></span><span>pewang@zuelligpharma.com</span></div><div class="cc-contact" role="listitem"><span class="cc-dot" aria-hidden="true"></span><span>jennychen@zuelligpharma.com</span></div><div class="cc-contact" role="listitem"><span class="cc-dot" aria-hidden="true"></span><span>joechen01@zuelligpharma.com</span></div></div><div class="cc-info">以上 3 位將預填到 Outlook 副本欄；請在寄出前再次確認。</div></div></div>
+  <p>完成檢核後，僅透過裝置上的 Outlook 郵件應用程式開啟草稿；不使用 Outlook 網頁版。寄出前請確認收件人與檢核內容。</p>
+<div class="mail-grid"><div><label class="field-label" for="mailTo">收件人電子郵件（選填）</label><input id="mailTo" type="email" class="text-field" inputmode="email" autocomplete="email" maxlength="130" placeholder="例：recipient@company.com"></div><div class="cc-section"><div class="cc-head"><span class="cc-heading">📨 固定副本 CC（3 位）</span><span class="cc-lock">已固定帶入</span></div><input id="mailCc" type="hidden" value="pewang@zuelligpharma.com jennychen@zuelligpharma.com joechen01@zuelligpharma.com"/><div class="cc-contacts" role="list" aria-label="固定副本三位收件人"><div class="cc-contact" role="listitem"><span class="cc-dot" aria-hidden="true"></span><span>pewang@zuelligpharma.com</span></div><div class="cc-contact" role="listitem"><span class="cc-dot" aria-hidden="true"></span><span>jennychen@zuelligpharma.com</span></div><div class="cc-contact" role="listitem"><span class="cc-dot" aria-hidden="true"></span><span>joechen01@zuelligpharma.com</span></div></div><div class="cc-info">以上 3 位將預填到 Outlook 副本欄；請在寄出前再次確認。</div></div></div>
 
 <div class="risk-mail-graphic" id="riskGraphicPanel">
   <!-- 供程式儲存即時產生的 PNG；不在表單上顯示額外預覽區塊 -->
@@ -441,20 +440,19 @@ body{background:linear-gradient(180deg,#f0fbf5,#eef9f6 62%,#f9fdfa);color:var(--
 </div>
 
 <div class="mail-actions outlook-actions">
- <button class="btn mail-send" id="sendOutlook" type="button" disabled>🖥 開啟電腦 Outlook</button>
- <button class="btn light web-outlook" id="sendOutlookWeb" type="button" disabled>🌐 開啟公司 Outlook 網頁版</button>
+ <button class="btn mail-send" id="sendOutlook" type="button" disabled>📨 開啟 Outlook 應用程式寄送</button>
  <button class="btn light" id="copyReport" type="button" disabled>📋 複製完整報告</button>
 </div>
-<div class="mail-status" id="mailStatus" role="status" aria-live="polite">完成檢核後，可選擇在電腦 Outlook 或公司 Outlook 網頁版開啟郵件草稿。</div>
-<details class="outlook-help"><summary>💡 點選後沒有開啟電腦 Outlook？</summary><div>在 Windows「設定 → 應用程式 → 預設應用程式」搜尋 <strong>MAILTO</strong>，選擇 <strong>Microsoft Outlook</strong> 作為預設應用程式。若公司不允許修改，請使用「公司 Outlook 網頁版」。兩種方式均會預填三位 CC，但請在正式寄出前再次確認；<strong>不會自動寄送或附加 PNG</strong>。</div></details>
+<div class="mail-status" id="mailStatus" role="status" aria-live="polite">完成檢核後，按下「開啟 Outlook 應用程式寄送」，系統將透過預設 MAILTO 郵件應用程式開啟草稿。</div>
+<details class="outlook-help"><summary>💡 點選後沒有開啟電腦 Outlook？</summary><div>在 Windows「設定 → 應用程式 → 預設應用程式」將 <strong>MAILTO</strong> 的預設應用程式指定為 <strong>Microsoft Outlook</strong>（公司管理電腦可請 IT 統一設定）。本網站不提供網頁版 Outlook，也無法繞過 Windows 預設程式設定強制啟動特定 App。草稿會預填三位固定 CC，請在 Outlook 檢查後手動按下「傳送」；<strong>不會自動寄送或附加 PNG</strong>。</div></details>
 
 <details><summary>👁️ 預覽即將帶入郵件的內容</summary><pre id="mailPreview">完成評估後顯示郵件內容。</pre></details>
 </div><div class="notice" id="completionNotice" role="status" aria-live="polite">尚需完成：選擇勤務，以及三類風險確認。</div></section></aside>
-</main><footer class="foot">本工具為示範性風險溝通與評分模型，非政府核定標準；「可使用」僅代表本次條件下相對適宜，仍須符合廠區管理規範、管制分區與現場主管指示。｜V18 · Outlook 雙通道／加工區／碼頭用語／醒目副本與未完成提醒＋安全定點定位＋雙重風險計分 · 複選場域 × 分別判定 · 精簡介面 × 業務需求 × 三圈評估 · 2026</footer>
+</main><footer class="foot">本工具為示範性風險溝通與評分模型，非政府核定標準；「可使用」僅代表本次條件下相對適宜，仍須符合廠區管理規範、管制分區與現場主管指示。｜V19 · 僅 Outlook 應用程式／廠務部門／加工區／碼頭用語／醒目副本與未完成提醒＋安全定點定位＋雙重風險計分 · 複選場域 × 分別判定 · 精簡介面 × 業務需求 × 三圈評估 · 2026</footer>
 <script>
 'use strict';
 const departments=[
- {group:'辦公及支援部門',items:[['office3','3F Office｜辦公室'],['inv','Inventory Control｜庫存管理'],['cts','CTS｜CTS 部門'],['qa','QA｜品質保證'],['adm','ADM｜行政'],['hr','HR｜人力資源'],['fac','HSS｜廠務安全'],['it','IT Division｜資訊']]},
+ {group:'辦公及支援部門',items:[['office3','3F Office｜辦公室'],['inv','Inventory Control｜庫存管理'],['cts','CTS｜CTS 部門'],['qa','QA｜品質保證'],['adm','ADM｜行政'],['hr','HR｜人力資源'],['fac','廠務'],['it','IT Division｜資訊']]},
  {group:'物流／倉儲單位',items:[['receiving','Receiving｜收貨'],['return','Return｜退貨'],['pp','PP｜PP 部門'],['dispatch','Dispatch｜出貨'],['delivery','Delivery｜配送']]}
 ];
 function fillDepartments(){ $('department').innerHTML='<option value="">請先選擇部門…</option>'+departments.map(g=>'<optgroup label="'+esc(g.group)+'">'+g.items.map(d=>'<option value="'+esc(d[0])+'">'+esc(d[1])+'</option>').join('')+'</optgroup>').join(''); }
@@ -861,22 +859,12 @@ function buildMailto(a){
  const params=['cc='+encodeURIComponent(d.cc),'subject='+encodeURIComponent(d.subject),'body='+encodeURIComponent(d.body)];
  return 'mailto:'+d.to+'?'+params.join('&');
 }
-function buildOutlookWeb(a){
- const d=outlookDraftData(a);
- const url=new URL('https://outlook.office.com/mail/deeplink/compose');
- if(d.to)url.searchParams.set('to',d.to);
- url.searchParams.set('cc',d.cc);
- url.searchParams.set('subject',d.subject);
- url.searchParams.set('body',d.body);
- return url.toString();
-}
 function updateMailPanel(){
  const ready=complete();
  $('sendOutlook').disabled=!ready;
- $('sendOutlookWeb').disabled=!ready;
  $('copyReport').disabled=!ready;
  $('mailPreview').textContent=ready?getEmailBody(assess()):'完成評估後顯示郵件內容。';
- if(!ready)$('mailStatus').textContent='完成檢核後，可選擇電腦 Outlook 或公司 Outlook 網頁版開啟草稿。';
+ if(!ready)$('mailStatus').textContent='完成檢核後，請透過 Outlook 郵件應用程式開啟草稿。';
 }
 function validateOutlookDraft(){
  if(!complete()){$('mailStatus').textContent='請先完成三圈風險評估。';$('mailStatus').classList.add('error');return false;}
@@ -885,16 +873,9 @@ function validateOutlookDraft(){
 }
 function openOutlook(){
  if(!validateOutlookDraft())return;
- $('mailStatus').textContent='已請 Windows 開啟預設郵件程式。如未出現 Outlook，請將 MAILTO 預設應用程式設為 Microsoft Outlook，或改用網頁版。正式寄出前請確認三位 CC。';
+ $('mailStatus').textContent='已請裝置透過 MAILTO 開啟郵件應用程式。請確認開啟的是 Outlook；若不是，需先將 Microsoft Outlook 設為預設郵件程式。此操作只建立草稿，請於 Outlook 確認後按傳送。';
  // Browser permission and Windows MAILTO setting determine which native email client opens.
  window.location.href=buildMailto(assess());
-}
-function openOutlookWeb(){
- if(!validateOutlookDraft())return;
- $('mailStatus').textContent='已嘗試開啟 Microsoft 365 Outlook 網頁版草稿。請先登入公司帳戶，再確認主旨、內文及三位 CC；登入逾時可能使部分欄位需要重新填寫。';
- const url=buildOutlookWeb(assess());
- // Invoked synchronously by a direct user click; no automatic email delivery.
- const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.style.display='none';document.body.appendChild(a);a.click();a.remove();
 }
 async function copyFullReport(){
  if(!complete())return;
@@ -982,7 +963,7 @@ function riskImageFilename(){return '手機風險結果_'+safeFileLabel($('perso
 async function downloadRiskGraphic(){try{downloadBlob(await imageBlob(),riskImageFilename());$('mailStatus').textContent='已產生本次填答的 PNG 圖片，可在 Outlook 插入圖片或作為附件。';}catch(e){$('mailStatus').textContent='無法產生圖片：'+e.message;}}
 
 
-initChecks();fillDepartments();fillTasks();update();document.querySelectorAll('input').forEach(x=>{if(x.id==='taskSearch')return;x.addEventListener('input',update);x.addEventListener('change',update);});$('task').addEventListener('change',update);$('department').addEventListener('change',update);$('warehouse').addEventListener('change',update);['appChannel','deviceType','safeAlternative'].forEach(id=>$(id).addEventListener('change',update));document.querySelectorAll('input[name="zone"]').forEach(x=>x.addEventListener('change',update));$('taskSearch').addEventListener('input',e=>{fillTasks(e.target.value);update();});$('showResult').addEventListener('click',()=>{if(!complete()){checkMissing();return;}progressAttention=false;paintProgress();approved=true;renderResult(assess());$('result-panel').scrollIntoView({behavior:'smooth',block:'center'});});$('exportCsv').addEventListener('click',saveCsv);$('printBtn').addEventListener('click',()=>{if(complete())window.print()});$('resetBtn').addEventListener('click',()=>{progressAttention=false;reset();});$('progressShortcuts').addEventListener('click',e=>{const btn=e.target.closest('[data-jump]');if(btn){progressAttention=true;paintProgress();jumpIncomplete(btn.dataset.jump);}});$('sendOutlook').addEventListener('click',openOutlook);$('sendOutlookWeb').addEventListener('click',openOutlookWeb);$('copyReport').addEventListener('click',copyFullReport);$('mailTo').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('mailCc').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('downloadRiskImage').addEventListener('click',downloadRiskGraphic);$('captureSafeGPS').addEventListener('click',captureSafeGPS);$('clearSafeGPS').addEventListener('click',()=>{safeGPS=null;$('safeGPSStatus').textContent='已清除 GPS 座標；仍可使用實體位置與地標描述。';update()});
+initChecks();fillDepartments();fillTasks();update();document.querySelectorAll('input').forEach(x=>{if(x.id==='taskSearch')return;x.addEventListener('input',update);x.addEventListener('change',update);});$('task').addEventListener('change',update);$('department').addEventListener('change',update);$('warehouse').addEventListener('change',update);['appChannel','deviceType','safeAlternative'].forEach(id=>$(id).addEventListener('change',update));document.querySelectorAll('input[name="zone"]').forEach(x=>x.addEventListener('change',update));$('taskSearch').addEventListener('input',e=>{fillTasks(e.target.value);update();});$('showResult').addEventListener('click',()=>{if(!complete()){checkMissing();return;}progressAttention=false;paintProgress();approved=true;renderResult(assess());$('result-panel').scrollIntoView({behavior:'smooth',block:'center'});});$('exportCsv').addEventListener('click',saveCsv);$('printBtn').addEventListener('click',()=>{if(complete())window.print()});$('resetBtn').addEventListener('click',()=>{progressAttention=false;reset();});$('progressShortcuts').addEventListener('click',e=>{const btn=e.target.closest('[data-jump]');if(btn){progressAttention=true;paintProgress();jumpIncomplete(btn.dataset.jump);}});$('sendOutlook').addEventListener('click',openOutlook);$('copyReport').addEventListener('click',copyFullReport);$('mailTo').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('mailCc').addEventListener('input',()=>{$('mailStatus').classList.remove('error')});$('downloadRiskImage').addEventListener('click',downloadRiskGraphic);$('captureSafeGPS').addEventListener('click',captureSafeGPS);$('clearSafeGPS').addEventListener('click',()=>{safeGPS=null;$('safeGPSStatus').textContent='已清除 GPS 座標；仍可使用實體位置與地標描述。';update()});
 </script>
 </body>
 </html>
